@@ -10,19 +10,19 @@ const Navbar = () => {
       <h3 className="logo">Logo</h3>
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
-        onClick={() => setIsMobile(false)}
+        onClick={() => setIsMobile(!isMobile)}
       >
         <Link to="/" className="home">
           <li>Home</li>
         </Link>
-        <Link to="/" className="home">
-          <li>Home</li>
+        <Link to="/login" className="login1">
+          <li>로그인1</li>
         </Link>
-        <Link to="/" className="home">
-          <li>Home</li>
+        <Link to="/login" className="login1">
+          <li>로그인2</li>
         </Link>
-        <Link to="/" className="signup">
-          <li>Signup</li>
+        <Link to="/signup" className="signup">
+          <li>회원가입</li>
         </Link>
       </ul>
       <button

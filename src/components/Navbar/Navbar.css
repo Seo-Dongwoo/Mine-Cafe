@@ -12,7 +12,8 @@
   background-color: #00828c;
   color: white;
 }
-.Logo {
+
+.logo {
   font-size: 30px;
 }
 
@@ -24,7 +25,8 @@
 }
 
 .home,
-.signup {
+.signup,
+.login1 {
   text-decoration: none;
   color: white;
   font-size: 20px;
@@ -43,7 +45,7 @@
 }
 
 @media screen and (max-width: 780px) {
-  .Logo {
+  .logo {
     display: flex;
     position: absolute;
     top: 15px;
@@ -63,7 +65,8 @@
     width: 100%;
   }
   .home,
-  .signup {
+  .signup,
+  .login1 {
     text-align: center;
     color: white;
     padding: 32px;
@@ -82,7 +85,7 @@
     background-color: #00828c;
     border: none;
     outline: none;
-    top: 15px;
+    top: 22.5px;
     right: 25px;
   }
 }
