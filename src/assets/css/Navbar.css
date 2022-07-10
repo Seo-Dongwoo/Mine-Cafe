@@ -1,22 +1,17 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "PT Sans", sans-serif;
-}
-.header {
-  height: 500px;
-  background-color: red;
-}
 .navbar {
-  background: linear-gradient(90deg, 0%, rgb(26, 23, 23) 100%);
+  background: linear-gradient(90deg, black 0%, rgb(26, 23, 23) 100%);
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
   position: sticky;
+  top: 0;
   z-index: 999;
+}
+
+.navbar.blocknav {
+  color: #000;
 }
 
 .navbar-container {
