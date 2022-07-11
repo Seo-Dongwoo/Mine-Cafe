@@ -6,7 +6,7 @@ import "../../assets/css/Navbar.css";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [blocknav, setBlocknav] = useState(false);
+  const [color, setColor] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -21,11 +21,12 @@ function Navbar() {
   useEffect(() => {
     showButton();
   }, []);
+
   const changeNavbarColor = () => {
     if (window.scrollY >= 20) {
-      setBlocknav(true);
+      setColor(true);
     } else {
-      setBlocknav(false);
+      setColor(false);
     }
   };
 
@@ -34,11 +35,11 @@ function Navbar() {
 
   return (
     <>
-      <nav className={blocknav ? "navbar blocknav" : "navbar"}>
+      <nav className={color ? "color-navbar" : "navbar"}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Apple
-            <i className="fa-brands fa-apple" />
+            Coffee
+            <i class="fas fa-coffee"></i>
           </Link>
           <div className="mobile-menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
