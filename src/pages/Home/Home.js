@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Box from "../../components/Navbar/Box";
+import Navbar from "../../components/Header/Navbar";
+import HomeSection from "../../components/Header/HomeSection";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <Box />
+      <HomeSection />
     </div>
   );
 };
