@@ -18,9 +18,6 @@ function Navbar() {
       setButton(true);
     }
   };
-  useEffect(() => {
-    showButton();
-  }, []);
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 20) {
@@ -29,6 +26,11 @@ function Navbar() {
       setColor(false);
     }
   };
+
+  useEffect(() => {
+    changeNavbarColor();
+    showButton();
+  }, []);
 
   window.addEventListener("scroll", changeNavbarColor);
   window.addEventListener("resize", showButton);

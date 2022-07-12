@@ -79,6 +79,10 @@
 }
 
 @media screen and (max-width: 960px) {
+  .navbar {
+    background: #242222;
+  }
+
   .NavbarItems {
     position: relative;
   }
