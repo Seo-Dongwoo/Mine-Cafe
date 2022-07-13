@@ -56,22 +56,26 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/services" className="nav-item-links">
-                Services
+              <Link to="/search-coffee" className="nav-item-links">
+                Search Cafe
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/products" className="nav-item-links">
-                Products
+              <Link to="/my-coffee" className="nav-item-links">
+                My Coffee
               </Link>
             </li>
             <li>
-              <Link to="/signup" className="nav-links-mobile">
-                회원가입
+              <Link to="/login" className="nav-links-mobile">
+                Coffee 로그인
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">회원가입</Button>}
+          <Link to="/login">
+            {button && (
+              <Button buttonStyle="btn--outline">Coffee 로그인</Button>
+            )}
+          </Link>
         </div>
       </nav>
     </>
