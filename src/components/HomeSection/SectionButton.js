@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
-import "../../assets/css/SectionButton.css";
+import "../../assets/css/Home/SectionButton.css";
 
 const SectionButton = () => {
   return (
-    <div className="container">
+    <div className="Section-container">
       <Link to="/login">
         <Button className="section-button" buttonStyle="btn--outline">
           GET STARTED

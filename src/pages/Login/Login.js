@@ -1,10 +1,11 @@
 import React from "react";
-import Navbar from "../../components/Header/Navbar";
+import "../../assets/css/Login/LoginForm.css";
+import LoginForm from "../../components/Login/LoginForm";
 
 const Login = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="login-container">
+      <LoginForm />
     </div>
   );
 };
