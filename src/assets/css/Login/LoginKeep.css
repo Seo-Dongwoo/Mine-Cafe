@@ -1,0 +1,9 @@
+.login-keep {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+.keep-checkbox {
+  margin-right: 5px;
+}
