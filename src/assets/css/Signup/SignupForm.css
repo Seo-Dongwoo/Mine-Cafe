@@ -1,0 +1,67 @@
+.signup-container {
+  background-image: url(https://cdn.pixabay.com/photo/2016/03/26/13/09/workspace-1280538_960_720.jpg);
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.signup-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+  width: 30vw;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  border-radius: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  margin: 3rem 0 2rem 0;
+  letter-spacing: 0.1rem;
+}
+
+.signup-input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  width: 100%;
+}
+
+.signup-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.have-id-link {
+  text-decoration: none;
+  color: white;
+}
+.have-id {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1180px) {
+  .signup-form {
+    height: 60vh;
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .signup-form {
+    height: 60vh;
+    width: 70vw;
+  }
+}

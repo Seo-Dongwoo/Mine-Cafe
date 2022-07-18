@@ -1,8 +1,13 @@
 import React from "react";
-import Navbar from "../../components/Header/Navbar";
+import SignupForm from "../../components/Signup/SignupForm";
+import "../../assets/css/Signup/SignupForm.css";
 
 const Signup = () => {
-  return <div></div>;
+  return (
+    <div className="signup-container">
+      <SignupForm />
+    </div>
+  );
 };
 
 export default Signup;
