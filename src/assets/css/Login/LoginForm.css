@@ -28,6 +28,12 @@
   letter-spacing: 0.4rem;
 }
 
+.form-title-link {
+  text-decoration: none;
+  color: #8b4f1d;
+  text-transform: none;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
@@ -42,7 +48,7 @@
   margin-bottom: 20px;
 }
 
-.btn-container {
+.login-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,10 +81,16 @@
   display: flex;
   flex-direction: row;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .forget-password {
-  padding-right: 30px;
+  padding-right: 50px;
+}
+
+.signup-link {
+  text-decoration-line: none;
+  color: white;
 }
 
 @media screen and (max-width: 1180px) {

@@ -1,0 +1,11 @@
+.signup-btn {
+  background: linear-gradient(to right, #101461 2%, #3355bb 65%);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  width: 65%;
+  height: 3rem;
+  border: none;
+  color: white;
+  border-radius: 2rem;
+  cursor: pointer;
+}
