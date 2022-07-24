@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   name: "React18-webpack-babel-setting", // 설정 이름
@@ -39,6 +40,7 @@ module.exports = {
       // 리액트 자동 로드
       React: "react",
     }),
+    new Dotenv(),
   ],
   output: {
     path: path.resolve(__dirname, "dist"),

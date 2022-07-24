@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 60vh;
+  height: 70vh;
   width: 30vw;
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -73,19 +73,17 @@
 .otherlogin-container {
   display: flex;
   justify-content: space-evenly;
-  margin: 1rem 0 2rem 0;
-  width: 80%;
+  margin: 3rem 0 2rem 0;
+  width: 100%;
 }
 
 .service-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   cursor: pointer;
   text-decoration: none;
-}
-
-.forget-password {
-  padding-right: 50px;
 }
 
 .signup-link {
@@ -95,7 +93,7 @@
 
 @media screen and (max-width: 1180px) {
   .login-form {
-    height: 60vh;
+    height: 70vh;
     width: 40vw;
   }
 
@@ -106,7 +104,7 @@
 
 @media screen and (max-width: 760px) {
   .login-form {
-    height: 60vh;
+    height: 70vh;
     width: 70vw;
   }
 
