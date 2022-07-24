@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 import "../../assets/css/Navbar.css";
+import { useAuth } from "../../contexts/AuthContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [color, setColor] = useState(false);
+  // const { currentUser } = useAuth();
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -41,7 +43,7 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             Coffee
-            <i class="fas fa-coffee"></i>
+            <i className="fas fa-coffee"></i>
           </Link>
           <div className="mobile-menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
