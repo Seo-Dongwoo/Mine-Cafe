@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const AuthContext = React.createContext();
 
@@ -8,7 +9,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState({});
 
   // 회원가입
   const register = (email, password) => {
@@ -18,6 +19,18 @@ export const AuthProvider = ({ children }) => {
   // 로그인
   const login = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password);
+  };
+
+  // 로그아웃
+  const logout = () => {
+    return auth.signOut();
+  };
+
+  // 구글 로그인
+  const googleLogin = () => {
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+    return auth.signInWithPopup(provider);
   };
 
   // 계속 user의 상태 변화를 지켜보고 있는다.
@@ -33,6 +46,8 @@ export const AuthProvider = ({ children }) => {
     currentUser,
     register,
     login,
+    logout,
+    googleLogin,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

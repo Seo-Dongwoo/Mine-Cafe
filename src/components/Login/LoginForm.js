@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/Login/LoginForm.css";
 import LoginButton from "./LoginButton";
 import LoginInput from "./LoginInput";
@@ -8,14 +8,13 @@ import { FcGoogle } from "react-icons/fc";
 import { SiKakao } from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import { Alert } from "react-bootstrap";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -41,13 +40,34 @@ const LoginForm = () => {
     setLoading(false);
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      setError("");
+      await googleLogin();
+      navigate("/");
+    } catch (error) {
+      setError("Google 로그인 실패");
+    }
+  };
+
   return (
     <form className="login-form" onSubmit={handleSubmit}>
       <Link to="/" className="form-title-link">
         <h2 className="form-title">Coffee</h2>
       </Link>
-      {error && <Alert variant="danger">{error}</Alert>}
-      <div className="input-container">
+      {error && (
+        <span
+          style={{
+            marginBottom: "10px",
+            color: "red",
+            fontSize: "0.8rem",
+            fontWeight: "bold",
+          }}
+        >
+          {error}
+        </span>
+      )}
+      <div className="login-input-container">
         <LoginInput
           type="text"
           placeholder="Email"
@@ -74,7 +94,7 @@ const LoginForm = () => {
           <SiKakao />
         </OtherLogin>
         <OtherLogin className="google-login">
-          <FcGoogle />
+          <FcGoogle onClick={handleGoogleLogin} />
         </OtherLogin>
       </div>
       <div className="service-container">
