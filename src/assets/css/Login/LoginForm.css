@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 70vh;
+  height: 60vh;
   width: 30vw;
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -24,17 +24,17 @@
 }
 
 .form-title {
-  margin: 4rem 0 2rem 0;
+  margin: 0;
   letter-spacing: 0.4rem;
 }
 
 .form-title-link {
   text-decoration: none;
-  color: #8b4f1d;
+  color: white;
   text-transform: none;
 }
 
-.input-container {
+.login-input-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,27 +73,27 @@
 .otherlogin-container {
   display: flex;
   justify-content: space-evenly;
-  margin: 3rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
   width: 100%;
 }
 
 .service-container {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   cursor: pointer;
   text-decoration: none;
 }
 
 .signup-link {
+  margin-right: 20px;
   text-decoration-line: none;
   color: white;
 }
 
 @media screen and (max-width: 1180px) {
   .login-form {
-    height: 70vh;
+    height: 60vh;
     width: 40vw;
   }
 
@@ -104,7 +104,7 @@
 
 @media screen and (max-width: 760px) {
   .login-form {
-    height: 70vh;
+    height: 60vh;
     width: 70vw;
   }
 

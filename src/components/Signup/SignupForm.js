@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../../assets/css/Signup/SignupForm.css";
 import SignupInput from "./SignupInput";
 import SignupButton from "./SignupButton";
@@ -9,7 +9,7 @@ const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { register } = useAuth();
+  const { register, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -55,7 +55,11 @@ const SignupForm = () => {
       <Link to="/" className="form-title-link">
         <h2 className="form-title">Coffee</h2>
       </Link>
-      {error}
+      {error && (
+        <span style={{ color: "red", fontSize: "0.8rem", fontWeight: "bold" }}>
+          {error}
+        </span>
+      )}
       <div className="signup-input-container">
         <SignupInput
           type="text"
