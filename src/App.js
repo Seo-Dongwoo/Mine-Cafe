@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import FindPassword from "./pages/FindPassword/FindPassword";
 import Account from "./pages/Account/Account";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/findPassword" element={<FindPassword />} />
           <Route
             path="/my-coffee"
             element={

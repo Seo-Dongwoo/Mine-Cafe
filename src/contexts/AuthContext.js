@@ -33,6 +33,13 @@ export const AuthProvider = ({ children }) => {
     return auth.signInWithPopup(provider);
   };
 
+  // 비밀번호 찾기
+  const findPassword = (email) => {
+    return auth.sendPasswordResetEmail(email, {
+      url: "http://localhost:3000/login",
+    });
+  };
+
   // 계속 user의 상태 변화를 지켜보고 있는다.
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -48,6 +55,7 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     googleLogin,
+    findPassword,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

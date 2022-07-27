@@ -48,6 +48,7 @@ module.exports = {
   },
   devServer: {
     // 개발 서버 설정
+    historyApiFallback: true,
     static: "./dist",
     port: 3000,
     hot: true, // 핫 모듈 교체(HMR) 활성화

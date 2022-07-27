@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../assets/css/Login/LoginForm.css";
-import LoginButton from "./LoginButton";
-import LoginInput from "./LoginInput";
+import AuthButton from "../AuthCommon/AuthButton";
+import AuthInput from "../AuthCommon/AuthInput";
 import LoginKeep from "./LoginKeep";
 import OtherLogin from "./OtherLogin";
 import { FcGoogle } from "react-icons/fc";
@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login, googleLogin } = useAuth();
+  const { login, googleLogin, findPassword } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -68,13 +68,13 @@ const LoginForm = () => {
         </span>
       )}
       <div className="login-input-container">
-        <LoginInput
+        <AuthInput
           type="text"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <LoginInput
+        <AuthInput
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
@@ -85,7 +85,7 @@ const LoginForm = () => {
         <LoginKeep />
       </div>
       <div className="login-btn-container">
-        <LoginButton content="Login" />
+        <AuthButton content="Login" />
       </div>
       <h5 className="otherlogin-title">또 다른 로그인</h5>
       <hr className="boundary" />
@@ -98,7 +98,9 @@ const LoginForm = () => {
         </OtherLogin>
       </div>
       <div className="service-container">
-        <h4 className="forget-password">비밀번호찾기</h4>
+        <Link to="/findPassword" className="find-password">
+          <h4>비밀번호찾기</h4>
+        </Link>
         <Link to="/signup" className="signup-link">
           <h4 className="signup">회원가입</h4>
         </Link>
