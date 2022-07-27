@@ -45,7 +45,7 @@
 
 .keep-container {
   width: 65%;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .login-btn-container {
@@ -83,6 +83,11 @@
   justify-content: space-evenly;
   cursor: pointer;
   text-decoration: none;
+}
+
+.find-password {
+  text-decoration: none;
+  color: white;
 }
 
 .signup-link {

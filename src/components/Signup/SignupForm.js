@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../assets/css/Signup/SignupForm.css";
-import SignupInput from "./SignupInput";
-import SignupButton from "./SignupButton";
+import AuthInput from "../AuthCommon/AuthInput";
+import AuthButton from "../AuthCommon/AuthButton";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -60,20 +60,20 @@ const SignupForm = () => {
           {error}
         </span>
       )}
-      <div className="signup-input-container">
-        <SignupInput
+      <div className="input-container">
+        <AuthInput
           type="text"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
         />
-        <SignupInput
+        <AuthInput
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
         />
-        <SignupInput
+        <AuthInput
           type="password"
           onChange={(e) => setConfirmPassword(e.target.value)}
           placeholder="Confirm Password"
@@ -81,7 +81,7 @@ const SignupForm = () => {
         />
       </div>
       <div className="signup-btn-container">
-        <SignupButton disabled={loading} type="submit" content="signup" />
+        <AuthButton disabled={loading} type="submit" content="signup" />
       </div>
       <hr className="boundary" />
       <Link to="/login" className="have-id-link">
