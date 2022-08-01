@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const AuthContext = React.createContext();
 
@@ -28,9 +28,16 @@ export const AuthProvider = ({ children }) => {
 
   // 구글 로그인
   const googleLogin = () => {
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: "select_account" });
-    return auth.signInWithPopup(provider);
+    const googleProvider = new GoogleAuthProvider();
+    googleProvider.setCustomParameters({ prompt: "select_account" });
+    return auth.signInWithPopup(googleProvider);
+  };
+
+  // 깃허브 로그인
+  const githubLogin = () => {
+    const githubProvider = new GithubAuthProvider();
+    githubProvider.setCustomParameters({ prompt: "select_account" });
+    return auth.signInWithPopup(githubProvider);
   };
 
   // 비밀번호 찾기
@@ -46,6 +53,7 @@ export const AuthProvider = ({ children }) => {
       setCurrentUser(user);
       console.log(user);
     });
+
     return unsubscribe;
   }, []);
 
@@ -56,6 +64,7 @@ export const AuthProvider = ({ children }) => {
     logout,
     googleLogin,
     findPassword,
+    githubLogin,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
