@@ -5,7 +5,7 @@ import AuthInput from "../AuthCommon/AuthInput";
 import LoginKeep from "./LoginKeep";
 import OtherLogin from "./OtherLogin";
 import { FcGoogle } from "react-icons/fc";
-import { SiKakao } from "react-icons/si";
+import { BsGithub } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login, googleLogin, findPassword } = useAuth();
+  const { login, googleLogin, githubLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -47,6 +47,16 @@ const LoginForm = () => {
       navigate("/");
     } catch (error) {
       setError("Google 로그인 실패");
+    }
+  };
+
+  const handleGithubLogin = async () => {
+    try {
+      setError("");
+      await githubLogin();
+      navigate("/");
+    } catch (error) {
+      setError("Github 로그인 실패");
     }
   };
 
@@ -90,8 +100,8 @@ const LoginForm = () => {
       <h5 className="otherlogin-title">또 다른 로그인</h5>
       <hr className="boundary" />
       <div className="otherlogin-container">
-        <OtherLogin className="kakao-login">
-          <SiKakao />
+        <OtherLogin className="github-login">
+          <BsGithub onClick={handleGithubLogin} />
         </OtherLogin>
         <OtherLogin className="google-login">
           <FcGoogle onClick={handleGoogleLogin} />
