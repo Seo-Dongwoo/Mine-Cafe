@@ -6,7 +6,7 @@ import "../../assets/css/Home/SectionButton.css";
 const SectionButton = () => {
   return (
     <div className="Section-container">
-      <Link to="/login">
+      <Link to="/search-cafe">
         <Button className="section-button" buttonStyle="btn--outline">
           GET STARTED
         </Button>
