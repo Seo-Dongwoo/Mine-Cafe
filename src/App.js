@@ -3,7 +3,8 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import FindPassword from "./pages/FindPassword/FindPassword";
-import Account from "./pages/Account/Account";
+import SearchCafe from "./pages/SearchCafe/SearchCafe";
+import MyCafe from "./pages/MyCafe/MyCafe";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -18,11 +19,12 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/findPassword" element={<FindPassword />} />
+          <Route path="/search-cafe" element={<SearchCafe />} />
           <Route
-            path="/my-coffee"
+            path="/my-cafe"
             element={
               <ProtectedRoute>
-                <Account />
+                <MyCafe />
               </ProtectedRoute>
             }
           ></Route>

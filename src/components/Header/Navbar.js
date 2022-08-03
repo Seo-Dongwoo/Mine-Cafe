@@ -72,13 +72,13 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/search-coffee" className="nav-item-links">
+                <Link to="/search-cafe" className="nav-item-links">
                   Search Cafe
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/my-coffee" className="nav-item-links">
-                  My Coffee
+                <Link to="/my-cafe" className="nav-item-links">
+                  My Cafe
                 </Link>
               </li>
               <li
@@ -116,13 +116,13 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/search-coffee" className="nav-item-links">
+                <Link to="/search-cafe" className="nav-item-links">
                   Search Cafe
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/my-coffee" className="nav-item-links">
-                  My Coffee
+                <Link to="/my-cafe" className="nav-item-links">
+                  My Cafe
                 </Link>
               </li>
               <li>
