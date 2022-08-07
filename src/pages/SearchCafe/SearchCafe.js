@@ -1,10 +1,11 @@
 import React from "react";
+import KakaoContainer from "../../components/SearchMap/KakaoContainer";
 
 const SearchCafe = () => {
   return (
-    <div>
-      <h1>Search Cafe</h1>
-    </div>
+    <>
+      <KakaoContainer />
+    </>
   );
 };
 

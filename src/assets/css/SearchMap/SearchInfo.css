@@ -1,0 +1,5 @@
+.Info {
+  position: absolute;
+  display: flex;
+  z-index: 10;
+}
