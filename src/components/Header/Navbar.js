@@ -7,7 +7,6 @@ import { useAuth } from "../../contexts/AuthContext";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [color, setColor] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -24,14 +23,6 @@ function Navbar() {
     }
   };
 
-  const changeNavbarColor = () => {
-    if (window.scrollY >= 20) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  };
-
   const handleLogout = async () => {
     setError("");
     try {
@@ -43,17 +34,15 @@ function Navbar() {
   };
 
   useEffect(() => {
-    changeNavbarColor();
     showButton();
   }, []);
 
-  window.addEventListener("scroll", changeNavbarColor);
   window.addEventListener("resize", showButton);
 
   return (
     <>
       {currentUser ? (
-        <nav className={color ? "color-navbar" : "navbar"}>
+        <nav className="navbar">
           <div className="navbar-container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
               Coffee
@@ -97,7 +86,7 @@ function Navbar() {
           </div>
         </nav>
       ) : (
-        <nav className={color ? "color-navbar" : "navbar"}>
+        <nav className="navbar">
           <div className="navbar-container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
               Coffee
