@@ -9,7 +9,7 @@ const SearchInput = () => {
     <form className="search-form" onSubmit={handleSubmit}>
       <input
         className="search-input"
-        placeholder="장소를 입력해주세요."
+        placeholder="   내 장소 및 카페 검색"
         onChange={onChange}
         value={inputText}
       />

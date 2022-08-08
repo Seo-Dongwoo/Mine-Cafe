@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../assets/css/SearchMap/SearchInfo.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import SearchInput from "./SearchInput";

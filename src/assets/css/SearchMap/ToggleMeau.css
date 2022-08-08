@@ -1,0 +1,7 @@
+.toggle-content {
+  position: absolute;
+  width: 400px;
+  height: 968px;
+  background-color: white;
+  z-index: 15;
+}
