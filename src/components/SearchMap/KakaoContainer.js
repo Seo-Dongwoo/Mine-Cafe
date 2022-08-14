@@ -1,18 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import KakaoMap from "./KakaoMap";
-import { KakaoContext } from "../../contexts/KakaoContext";
 import "../../assets/css/SearchMap/KakaoMap.css";
-import SearchInfo from "./SearchInfo";
-import SearchShadow from "./SearchShadow";
+import Banner from "./Banner";
+import Toggle from "./Toggle";
 
 const KakaoContainer = () => {
-  const { Place } = useContext(KakaoContext);
-
   return (
     <div className="search-container">
-      <SearchShadow />
-      <SearchInfo />
-      <KakaoMap Place={Place} />
+      <Banner />
+      <Toggle />
+      <KakaoMap />
     </div>
   );
 };

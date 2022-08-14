@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import "../../assets/css/SearchMap/SearchInfo.css";
+import React, { useContext } from "react";
+import "../../assets/css/SearchMap/Banner.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import SearchInput from "./SearchInput";
 import SearchMeau from "./SearchMeau";
@@ -8,7 +8,7 @@ const SearchInfo = () => {
   const { handleSubmit, onChange, inputText } = useContext(KakaoContext);
 
   return (
-    <div className="Info">
+    <div className="banner">
       <SearchMeau />
       <SearchInput
         handleSubmit={handleSubmit}
