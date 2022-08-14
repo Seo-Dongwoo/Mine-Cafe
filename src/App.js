@@ -9,29 +9,32 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./contexts/AuthContext";
 import { KakaoProvider } from "./contexts/KakaoContext";
+import { ToggleProvider } from "./contexts/ToggleContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 const App = () => {
   return (
     <AuthProvider>
       <KakaoProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/findPassword" element={<FindPassword />} />
-            <Route path="/search-cafe" element={<SearchCafe />} />
-            <Route
-              path="/my-cafe"
-              element={
-                <ProtectedRoute>
-                  <MyCafe />
-                </ProtectedRoute>
-              }
-            ></Route>
-          </Routes>
-        </BrowserRouter>
+        <ToggleProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/findPassword" element={<FindPassword />} />
+              <Route path="/search-cafe" element={<SearchCafe />} />
+              <Route
+                path="/my-cafe"
+                element={
+                  <ProtectedRoute>
+                    <MyCafe />
+                  </ProtectedRoute>
+                }
+              ></Route>
+            </Routes>
+          </BrowserRouter>
+        </ToggleProvider>
       </KakaoProvider>
     </AuthProvider>
   );

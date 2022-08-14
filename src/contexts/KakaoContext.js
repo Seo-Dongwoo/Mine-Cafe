@@ -5,6 +5,7 @@ export const KakaoContext = createContext();
 export const KakaoProvider = ({ children }) => {
   const [inputText, setInputText] = useState("");
   const [Place, setPlace] = useState("");
+  const [Places, setPlaces] = useState([]);
 
   const onChange = (e) => {
     setInputText(e.target.value);
@@ -24,6 +25,8 @@ export const KakaoProvider = ({ children }) => {
     setInputText,
     Place,
     setPlace,
+    Places,
+    setPlaces,
   };
 
   return (
