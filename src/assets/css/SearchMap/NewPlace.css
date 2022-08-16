@@ -1,0 +1,16 @@
+.newPlace-container {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  padding: 25px 0 0 20px;
+}
+
+.newPlace-title {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.newPlace-description {
+  font-size: 13px;
+  color: rgba(128, 128, 128, 0.87);
+}
