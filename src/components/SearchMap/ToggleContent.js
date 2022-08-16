@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../assets/css/SearchMap/ToggleContent.css";
+import { KakaoContext } from "../../contexts/KakaoContext";
+import GetWeather from "./GetWeather";
 import SearchInput from "./SearchInput";
 import SearchList from "./SearchList";
 import SearchMeau from "./SearchMeau";
 import SearchNav from "./SearchNav";
+import NewPlace from "./NewPlace";
 
 const ToggleContent = () => {
+  const { Place } = useContext(KakaoContext);
   return (
     <div className="toggle-content">
       <div className="content-header">
@@ -14,7 +18,16 @@ const ToggleContent = () => {
         <SearchNav />
       </div>
       <div className="content-body">
-        <SearchList />
+        <>
+          {Place ? (
+            <SearchList />
+          ) : (
+            <div className="default-content">
+              <GetWeather />
+              <NewPlace />
+            </div>
+          )}
+        </>
       </div>
       <div className="content-footer">
         <a className="xa" href="#">
