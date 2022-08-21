@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/SearchMap/NewPlace.css";
+import "../../assets/css/SearchMap/Toggle/NewPlace.css";
 
 const NewPlace = () => {
   return (
@@ -9,6 +9,8 @@ const NewPlace = () => {
         새로운 수정된 정보를 알고 계세요? <br />
         장소 제보는 지도 품질 향상에 큰 도움이 됩니다.
       </p>
+      <button className="newPlace-btn1">신규 장소 등록</button>
+      <button className="newPlace-btn2">지도 정보 수정</button>
     </div>
   );
 };

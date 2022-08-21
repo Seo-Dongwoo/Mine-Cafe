@@ -1,37 +1,31 @@
-.search-container {
+.variable-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 25%;
+  border-bottom: 1px solid #ddd;
 }
 
-.map-container {
+.variable-title {
   position: absolute;
-  width: 100%;
-  height: 968px;
-}
-
-#map {
-  position: absolute;
+  padding: 20px;
   width: 100%;
   height: 100%;
 }
 
-#map-category {
+#category {
   position: absolute;
-  top: 10px;
-  left: 420px;
+  margin: 70px 100px;
   border-radius: 5px;
   border: 1px solid #909090;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
   background: #fff;
   overflow: hidden;
-  z-index: 10;
-  cursor: pointer;
+  z-index: 2;
 }
 
-#map-category #CE7 {
+#category #CE7 {
   list-style: none;
-  width: 80px;
+  width: 200px;
   border-right: 1px solid #acacac;
   padding: 6px 0;
   text-align: center;
@@ -39,24 +33,27 @@
   font-weight: bold;
 }
 
-#map-categoryy #CE7:hover {
+#category #CE7:hover {
   background: #ffe6e6;
   border-left: 1px solid #acacac;
   margin-left: -1px;
 }
 
-#map-category #CE7 span {
+#category #CE7 span {
   display: block;
   margin: 0 auto 3px;
   width: 27px;
   height: 28px;
 }
-
-#map-category #CE7 .category_bg {
+#category #CE7 .category_bg {
   background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png)
     no-repeat;
 }
 
-#map-category #CE7 .cafe {
+#category #CE7 .cafe {
   background-position: -10px -144px;
+}
+
+#category #CE7.on .category_bg {
+  background-position-x: -46px;
 }

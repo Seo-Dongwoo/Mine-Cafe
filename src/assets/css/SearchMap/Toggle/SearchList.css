@@ -29,6 +29,7 @@
 }
 
 .result-title {
+  cursor: pointer;
   display: flex;
   padding-bottom: 5px;
 }
@@ -39,4 +40,6 @@
 
 .result-phone {
   margin-top: 3px;
+  color: #aed0f3;
+  font-weight: bold;
 }

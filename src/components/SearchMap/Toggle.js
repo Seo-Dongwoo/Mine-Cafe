@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../../assets/css/SearchMap/Toggle.css";
+import "../../assets/css/SearchMap/Toggle/Toggle.css";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import ToggleContent from "./ToggleContent";
 import { ToggleContext } from "../../contexts/ToggleContext";

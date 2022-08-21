@@ -1,0 +1,41 @@
+.newPlace-container {
+  width: 100%;
+  height: 55%;
+  padding: 25px 0 0 20px;
+}
+
+.newPlace-title {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.newPlace-description {
+  font-size: 13px;
+  color: rgba(128, 128, 128, 0.87);
+}
+
+.newPlace-btn1 {
+  width: 90px;
+  height: 30px;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 10px 10px 0 0;
+  border: none;
+  background-color: #35d835;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newPlace-btn2 {
+  width: 90px;
+  height: 30px;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #35d835;
+  background-color: white;
+  color: #35d835;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  cursor: pointer;
+}

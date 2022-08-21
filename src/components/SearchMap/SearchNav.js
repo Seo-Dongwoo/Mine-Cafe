@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/SearchMap/SearchNav.css";
+import "../../assets/css/SearchMap/Toggle/SearchNav.css";
 
 const SearchNav = () => {
   return (

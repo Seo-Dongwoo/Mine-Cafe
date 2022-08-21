@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../assets/css/SearchMap/GetWeather.css";
+import "../../assets/css/SearchMap/Toggle/GetWeather.css";
 import axios from "axios";
 import {
   TiWeatherSunny,
@@ -28,7 +28,6 @@ const GetWeather = () => {
         const url = `${API_ENDPOINT}lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`;
 
         axios.get(url).then((res) => {
-          console.log(res.data);
           setCity(res.data.name);
           setWeather(res.data.weather[0].id);
           setTemp(res.data.main.temp);
@@ -68,11 +67,11 @@ const GetWeather = () => {
 
   return (
     <div className="weather-container">
-      <h2 className="current-place">현재 위치 : {city}</h2>
+      <h3 className="current-place">현재 위치 : {city}</h3>
       <div className="weather-info">
-        <h2 className="weather">날씨 :</h2>
+        <h3 className="weather">날씨 :</h3>
         {weatherIcon()}
-        <h2 className="temp">온도 : {kelvinToFarenheit(temp)}°C</h2>
+        <h3 className="temp">온도 : {kelvinToFarenheit(temp)}°C</h3>
       </div>
     </div>
   );
