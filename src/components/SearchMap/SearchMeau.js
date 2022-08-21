@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ToggleContext } from "../../contexts/ToggleContext";
 import { Link } from "react-router-dom";
-import "../../assets/css/SearchMap/SearchMeau.css";
+import "../../assets/css/SearchMap/Toggle/SearchMeau.css";
 import { BsList } from "react-icons/bs";
 
 const SearchMeau = () => {

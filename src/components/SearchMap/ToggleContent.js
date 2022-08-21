@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../../assets/css/SearchMap/ToggleContent.css";
+import "../../assets/css/SearchMap/Toggle/ToggleContent.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import GetWeather from "./GetWeather";
 import SearchInput from "./SearchInput";
@@ -7,9 +7,11 @@ import SearchList from "./SearchList";
 import SearchMeau from "./SearchMeau";
 import SearchNav from "./SearchNav";
 import NewPlace from "./NewPlace";
+import VariablePlace from "./VariablePlace";
 
 const ToggleContent = () => {
   const { Place } = useContext(KakaoContext);
+
   return (
     <div className="toggle-content">
       <div className="content-header">
@@ -22,10 +24,11 @@ const ToggleContent = () => {
           {Place ? (
             <SearchList />
           ) : (
-            <div className="default-content">
+            <>
               <GetWeather />
+              <VariablePlace />
               <NewPlace />
-            </div>
+            </>
           )}
         </>
       </div>

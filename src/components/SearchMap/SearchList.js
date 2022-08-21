@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../../assets/css/SearchMap/SearchList.css";
+import "../../assets/css/SearchMap/Toggle/SearchList.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 
 const SearchList = () => {

@@ -1,12 +1,12 @@
-/*global kakao*/
-import React, { useEffect, useContext } from "react";
-import "../../assets/css/SearchMap/KakaoMap.css";
+/* global kakao */
+import React, { useContext, useEffect } from "react";
+import "../../assets/css/SearchMap/Toggle/VariablePlace.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 
-const KakaoMap = () => {
+const VariablePlace = () => {
   const { Place, setPlaces } = useContext(KakaoContext);
 
-  const getMap = () => {
+  const cafeMarker = () => {
     const script = document.createElement("script");
     script.async = true;
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}&libraries=services&autoload=false`;
@@ -16,8 +16,6 @@ const KakaoMap = () => {
     script.onload = () => {
       kakao.maps.load(() => {
         var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-        var mapTypeControl = new kakao.maps.MapTypeControl();
-        var zoomControl = new kakao.maps.ZoomControl();
 
         const container = document.getElementById("map");
 
@@ -27,9 +25,6 @@ const KakaoMap = () => {
           level: 3,
         };
         const map = new kakao.maps.Map(container, options);
-
-        map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
         // 장소 검색 객체를 생성
         const ps = new kakao.maps.services.Places(map);
@@ -58,42 +53,9 @@ const KakaoMap = () => {
             // 검색된 장소 위치를 기준으로 지도 범위를 재설정
             map.setBounds(bounds);
 
-            // 페이지 목록 보여주는 displayPagination() 추가
-            displayPagination(pagination);
             setPlaces(data);
             console.log(data);
           }
-        }
-
-        // 검색결과 목록 하단에 페이지 번호 표시
-        function displayPagination(pagination) {
-          var paginationEl = document.getElementById("pagination"),
-            fragment = document.createDocumentFragment(),
-            i;
-
-          // 기존에 추가된 페이지 번호 삭제
-          while (paginationEl.hasChildNodes()) {
-            paginationEl.removeChild(paginationEl.lastChild);
-          }
-
-          for (i = 1; i <= pagination.last; i++) {
-            var el = document.createElement("a");
-            el.href = "#";
-            el.innerHTML = i;
-
-            if (i === pagination.current) {
-              el.className = "on";
-            } else {
-              el.onclick = (function (i) {
-                return function () {
-                  pagination.gotoPage(i);
-                };
-              })(i);
-            }
-
-            fragment.appendChild(el);
-          }
-          paginationEl.appendChild(fragment);
         }
 
         // 지도에 마커를 표시하는 함수
@@ -120,20 +82,20 @@ const KakaoMap = () => {
   };
 
   useEffect(() => {
-    getMap();
+    cafeMarker();
   }, [Place]);
 
   return (
-    <div className="map-container">
-      <div id="map"></div>
-      <div id="map-category">
-        <div id="CE7">
+    <div className="variable-container">
+      <h3 className="variable-title">주변 카페 찾기</h3>
+      <div id="category">
+        <div id="CE7" data-order="4">
           <span className="category_bg cafe"></span>
-          주변 카페
+          주변 카페 검색
         </div>
       </div>
     </div>
   );
 };
 
-export default KakaoMap;
+export default VariablePlace;
