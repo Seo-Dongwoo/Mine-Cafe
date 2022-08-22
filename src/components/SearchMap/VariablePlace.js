@@ -65,12 +65,20 @@ const VariablePlace = () => {
             map: map,
             position: new kakao.maps.LatLng(place.y, place.x),
           });
-
+          console.log(Place);
           // 마커에 클릭이벤트를 등록
           kakao.maps.event.addListener(marker, "click", function () {
             // 마커를 클릭하면 장소명이 인포윈도우에 표출
             infowindow.setContent(
-              '<div style="padding:5px;font-size:1rem;">' +
+              `<div style="display: block;
+              background: #50627F;
+              color: #fff;
+              text-align: center;
+              width: 230px;
+              height: 24px;
+              line-height:22px;
+              border-radius:5px;
+              padding:0px 5px;">` +
                 place.place_name +
                 "</div>"
             );
