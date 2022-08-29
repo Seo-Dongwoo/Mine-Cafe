@@ -40,7 +40,7 @@ const VariablePlace = () => {
         ps.keywordSearch(Place, placesSearchCB);
 
         // 키워드 검색 완료 시 호출되는 콜백함수
-        function placesSearchCB(data, status, pagination) {
+        function placesSearchCB(data, status) {
           if (status === kakao.maps.services.Status.OK) {
             // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
             // LatLngBounds 객체에 좌표를 추가
