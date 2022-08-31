@@ -1,9 +1,11 @@
 import React from "react";
+import "../../assets/css/Pages/Mycafe.css";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 const MyCafe = () => {
   return (
-    <div>
-      <h1>MyCafe</h1>
+    <div className="mycafe-container">
+      <Dashboard />
     </div>
   );
 };

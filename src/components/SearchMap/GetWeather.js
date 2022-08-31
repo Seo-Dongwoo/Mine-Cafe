@@ -71,8 +71,8 @@ const GetWeather = () => {
       <div className="weather-info">
         <h3 className="weather">날씨 :</h3>
         {weatherIcon()}
-        <h3 className="temp">온도 : {kelvinToFarenheit(temp)}°C</h3>
       </div>
+      <h3 className="temp">온도 : {kelvinToFarenheit(temp)}°C</h3>
     </div>
   );
 };
