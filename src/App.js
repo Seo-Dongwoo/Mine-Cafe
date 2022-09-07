@@ -31,7 +31,7 @@ const App = () => {
                     <MyCafe />
                   </ProtectedRoute>
                 }
-              ></Route>
+              />
             </Routes>
           </BrowserRouter>
         </ToggleProvider>

@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { BiSearch } from "react-icons/bi";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 
-const SidebarItem = () => {
+const SidebarMeau = ({ onClick }) => {
   const meaus = [
     { name: "내 정보", path: "/my-cafe", icon: <CgProfile /> },
     { name: "카페 검색", path: "/search-cafe", icon: <BiSearch /> },
@@ -25,6 +25,7 @@ const SidebarItem = () => {
             to={meau.path}
             key={index}
             className="sidebar-item"
+            onClick={onClick}
           >
             <div className="item-box">
               {meau.icon}
@@ -37,4 +38,4 @@ const SidebarItem = () => {
   );
 };
 
-export default SidebarItem;
+export default SidebarMeau;
