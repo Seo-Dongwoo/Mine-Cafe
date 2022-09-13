@@ -25,6 +25,7 @@ const Category = ({ onChange, reason }) => {
           id="select"
           label="Favorite"
           onChange={onChange}
+          name="reason"
           value={reason || ""}
         >
           <MenuItem value="분위기">분위기</MenuItem>

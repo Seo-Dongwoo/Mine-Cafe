@@ -11,7 +11,7 @@ const SidebarMeau = ({ onClick }) => {
     { name: "카페 검색", path: "/search-cafe", icon: <BiSearch /> },
     {
       name: "카페 추가",
-      path: "/my-cafe",
+      path: "/my-cafe/add-cafe",
       icon: <MdOutlineAddCircleOutline />,
     },
   ];

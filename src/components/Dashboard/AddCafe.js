@@ -1,39 +1,36 @@
 import React, { useState } from "react";
 import "../../assets/css/Dashboard/AddCafe.css";
 import Category from "./Category";
-import PostDataService from "../../Services/Posts.Service";
-
+import { useDispatch } from "react-redux";
+import { addCafeInitiate } from "../../redux/DashboardActions";
 const AddCafe = () => {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [reason, setReason] = useState("");
-  const [flag, setFlag] = useState(true);
-  const [message, setMessage] = useState({ error: false, msg: "" });
+  const initialState = {
+    name: "",
+    address: "",
+    reason: "",
+  };
 
-  const handleSubmit = async (e) => {
+  const [state, setState] = useState(initialState);
+  const { name, address, reason } = state;
+  const [message, setMessage] = useState({ error: false, msg: "" });
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     setMessage("");
 
     if (name === "" || address === "" || reason === "") {
-      setMessage({ error: true, msg: "추가하기가 실패하였습니다." });
+      setMessage({ error: true, msg: "추가가 실패하였습니다." });
       return;
     }
 
-    const newPost = {
-      name,
-      address,
-      reason,
-    };
-    console.log(newPost);
-    try {
-      await PostDataService.addPosts(newPost);
-      setMessage({ error: false, msg: "카페가 추가 되었습니다." });
-    } catch (err) {
-      setMessage({ error: true, msg: err.message });
-    }
-    setName("");
-    setAddress("");
-    setReason("");
+    dispatch(addCafeInitiate(state));
+    setState({ name: "", address: "", reason: "" });
   };
 
   return (
@@ -41,7 +38,6 @@ const AddCafe = () => {
       {message?.msg && (
         <div
           variant={message?.error ? "danger" : "success"}
-          dismissible
           onClose={() => setMessage("")}
           style={{ textAlign: "center" }}
         >
@@ -51,9 +47,10 @@ const AddCafe = () => {
       <div className="input-box">
         <input
           type="text"
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleChange}
           required
-          value={name}
+          name="name"
+          value={name || ""}
         />
         <label>Name</label>
       </div>
@@ -61,12 +58,13 @@ const AddCafe = () => {
         <input
           type="text"
           required
-          onChange={(e) => setAddress(e.target.value)}
-          value={address}
+          onChange={handleChange}
+          name="address"
+          value={address || ""}
         />
         <label>Address</label>
       </div>
-      <Category onChange={(e) => setReason(e.target.value)} />
+      <Category onChange={handleChange} name="reason" value={reason} />
       <div className="btn-box">
         <button className="add-btn">추가</button>
         <button className="cancel-btn">취소</button>

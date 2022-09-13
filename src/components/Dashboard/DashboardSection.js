@@ -11,9 +11,6 @@ const DashboardSection = () => {
       </div>
       <div className="cards-container">
         <SectionCard />
-        <SectionCard />
-        <SectionCard />
-        <SectionCard />
       </div>
     </div>
   );
