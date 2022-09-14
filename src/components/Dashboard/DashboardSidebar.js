@@ -18,7 +18,7 @@ const DashboardSidebar = () => {
         <span className="brand-title">COFFEE</span>
       </div>
       <SidebarMeau onClick={handleToggleClick} />
-      {addContent && <AddCafe />}
+      {addContent && <AddCafe onClick={handleToggleClick} />}
     </div>
   );
 };
