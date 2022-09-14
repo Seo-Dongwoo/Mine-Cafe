@@ -3,13 +3,13 @@ import "../../assets/css/Dashboard/AddCafe.css";
 import Category from "./Category";
 import { useDispatch } from "react-redux";
 import { addCafeInitiate } from "../../redux/DashboardActions";
-const AddCafe = () => {
+
+const AddCafe = ({ onClick }) => {
   const initialState = {
     name: "",
     address: "",
     reason: "",
   };
-
   const [state, setState] = useState(initialState);
   const { name, address, reason } = state;
   const [message, setMessage] = useState({ error: false, msg: "" });
@@ -67,7 +67,9 @@ const AddCafe = () => {
       <Category onChange={handleChange} name="reason" value={reason} />
       <div className="btn-box">
         <button className="add-btn">추가</button>
-        <button className="cancel-btn">취소</button>
+        <button className="cancel-btn" onClick={onClick}>
+          취소
+        </button>
       </div>
     </form>
   );

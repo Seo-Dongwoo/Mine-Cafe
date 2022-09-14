@@ -32,14 +32,6 @@ const App = () => {
                   </ProtectedRoute>
                 }
               />
-              <Route
-                path="/my-cafe/add-cafe"
-                element={
-                  <ProtectedRoute>
-                    <MyCafe />
-                  </ProtectedRoute>
-                }
-              />
             </Routes>
           </BrowserRouter>
         </ToggleProvider>
