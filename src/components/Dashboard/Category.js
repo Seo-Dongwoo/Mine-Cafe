@@ -8,14 +8,14 @@ import Select from "@mui/material/Select";
 const Category = ({ onChange, reason }) => {
   return (
     <Box
-      className="category-container"
       sx={{
         minWidth: 100,
       }}
+      className="category-box"
       style={{
-        width: 217,
+        width: "80%",
         alignItem: "center",
-        margin: "auto",
+        margin: "20px auto",
       }}
     >
       <FormControl fullWidth>

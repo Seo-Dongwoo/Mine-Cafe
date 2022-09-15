@@ -5,9 +5,8 @@
 }
 
 .trHead th {
-  padding: 8px;
+  padding: 20px;
   width: 20%;
-  font-weight: normal;
   font-weight: 600;
   font-size: 20px;
 }
@@ -24,7 +23,7 @@
 
 .edit-btn {
   width: 40%;
-  margin: 5px 30px;
+  margin: 5px 20px;
   border: none;
   border-radius: 5px;
   color: white;
@@ -36,7 +35,7 @@
 
 .delete-btn {
   width: 40%;
-  margin: 5px 30px;
+  margin: 5px 20px;
   border: none;
   color: white;
   border-radius: 5px;
@@ -44,4 +43,29 @@
   font-weight: bold;
   background-color: orange;
   cursor: pointer;
+}
+
+@media (max-width: 1150px) {
+  .trHead th {
+    width: 25%;
+    font-size: 17px;
+  }
+
+  .list-btn-box {
+    width: 200px;
+  }
+
+  .edit-btn {
+    margin: 5px 5px;
+  }
+
+  .delete-btn {
+    margin: 5px 5px;
+  }
+}
+
+@media (max-width: 825px) {
+  .table {
+    display: none;
+  }
 }
