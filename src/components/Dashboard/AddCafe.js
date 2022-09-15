@@ -39,7 +39,7 @@ const AddCafe = ({ onClick }) => {
         <div
           variant={message?.error ? "danger" : "success"}
           onClose={() => setMessage("")}
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center", marginTop: "10px" }}
         >
           {message?.msg}
         </div>
