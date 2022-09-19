@@ -21,7 +21,7 @@
 }
 .result-items {
   padding: 15px 0 0 15px;
-  height: 15%;
+  height: 17%;
 }
 
 .result-items:hover {
@@ -41,5 +41,21 @@
 .result-phone {
   margin-top: 3px;
   color: #aed0f3;
+  font-weight: bold;
+}
+
+.modal-btn {
+  width: 200px;
+  height: 30px;
+  margin-top: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  border: 2px solid gray;
+  cursor: pointer;
+}
+
+.modal-btn span {
+  font-size: 15px;
   font-weight: bold;
 }

@@ -5,10 +5,10 @@ import { Table } from "react-bootstrap";
 import {
   deleteCafeInitiate,
   getCafesInitiate,
-} from "../../redux/DashboardActions";
+} from "../../redux/Actions/DashboardActions";
 
 const CafeList = () => {
-  const { cafes } = useSelector((state) => state.data);
+  const { cafes } = useSelector((state) => state.cafeReducer);
   const dispatch = useDispatch();
 
   const deleteHandler = (id) => {
@@ -36,8 +36,8 @@ const CafeList = () => {
           return (
             <tr className="trBody" key={cafe.id}>
               <td className="list-number">{index + 1}</td>
-              <td>{cafe.name}</td>
-              <td>{cafe.address}</td>
+              <td>{cafe.place_name}</td>
+              <td>{cafe.address_name}</td>
               <td>{cafe.reason}</td>
               <td className="list-btn-box">
                 <button className="edit-btn">Edit</button>

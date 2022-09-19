@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "../../assets/css/Dashboard/AddCafe.css";
-import Category from "./Category";
+import React, { useEffect, useState } from "react";
+import "../../assets/css/SearchMap/Toggle/AddCafeModal.css";
+import Category from "../Dashboard/Category";
 import { useDispatch } from "react-redux";
 import { addCafeInitiate } from "../../redux/Actions/DashboardActions";
 
-const AddCafe = ({ onClick }) => {
+const AddCafeModal = ({ modal, setModal }) => {
   const initialState = {
     place_name: "",
     address_name: "",
@@ -18,6 +18,10 @@ const AddCafe = ({ onClick }) => {
   const handleChange = (e) => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });
+  };
+
+  const onCloseHandler = () => {
+    setModal({});
   };
 
   const handleSubmit = (e) => {
@@ -35,8 +39,12 @@ const AddCafe = ({ onClick }) => {
     setState({ place_name: "", address_name: "", reason: "" });
   };
 
+  useEffect(() => {
+    setState({ ...state, ...modal.content });
+  }, [setState]);
+
   return (
-    <form className="addCafe-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="modal">
       {message?.msg && (
         <div
           variant={message?.error ? "danger" : "success"}
@@ -46,30 +54,18 @@ const AddCafe = ({ onClick }) => {
           {message?.msg}
         </div>
       )}
-      <div className="input-box">
-        <input
-          type="text"
-          onChange={handleChange}
-          required
-          name="place_name"
-          value={place_name || ""}
-        />
-        <label>Name</label>
-      </div>
-      <div className="input-box">
-        <input
-          type="text"
-          required
-          onChange={handleChange}
-          name="address_name"
-          value={address_name || ""}
-        />
-        <label>Address</label>
+      <div className="place" value={modal.content}>
+        <div className="place_name" name="place_name">
+          <h2>{modal.content.place_name}</h2>
+        </div>
+        <div className="address_name" name="address_name">
+          <h3>{modal.content.address_name}</h3>
+        </div>
       </div>
       <Category onChange={handleChange} name="reason" value={reason} />
-      <div className="btn-box">
-        <button className="add-btn">추가</button>
-        <button className="cancel-btn" onClick={onClick}>
+      <div className="modal-btn-box">
+        <button className="modal-add-btn">추가</button>
+        <button className="modal-cancel-btn" onClick={onCloseHandler}>
           취소
         </button>
       </div>
@@ -77,4 +73,4 @@ const AddCafe = ({ onClick }) => {
   );
 };
 
-export default AddCafe;
+export default AddCafeModal;
