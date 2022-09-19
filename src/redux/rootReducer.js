@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import cafeReducer from "./DashboardReducer";
+import cafeReducer from "./Reducers/DashboardReducer";
 
 const rootReducer = combineReducers({
-  data: cafeReducer,
+  cafeReducer,
 });
 
 export default rootReducer;

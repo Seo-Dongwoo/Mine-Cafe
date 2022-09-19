@@ -1,4 +1,4 @@
-import * as types from "./DashboardActions";
+import * as types from "../Actions/DashboardActions";
 
 const initialState = {
   cafes: [],
