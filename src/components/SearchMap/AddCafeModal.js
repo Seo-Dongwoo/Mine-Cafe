@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/SearchMap/Toggle/AddCafeModal.css";
-import Category from "../Dashboard/Category";
+import Category from "../Common/Category";
 import { useDispatch } from "react-redux";
 import { addCafeInitiate } from "../../redux/Actions/DashboardActions";
 

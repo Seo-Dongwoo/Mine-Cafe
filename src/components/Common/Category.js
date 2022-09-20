@@ -21,12 +21,13 @@ const Category = ({ onChange, reason }) => {
       <FormControl fullWidth>
         <InputLabel id="select-input">추천 이유</InputLabel>
         <Select
+          defaultValue=""
+          onChange={onChange}
+          name="reason"
+          value={reason}
           labelId="select-label"
           id="select"
           label="Favorite"
-          onChange={onChange}
-          name="reason"
-          value={reason || ""}
         >
           <MenuItem value="분위기">분위기</MenuItem>
           <MenuItem value="음악">음악</MenuItem>

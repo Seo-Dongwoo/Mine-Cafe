@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/css/Dashboard/AddCafe.css";
-import Category from "./Category";
+import Category from "../Common/Category";
 import { useDispatch } from "react-redux";
 import { addCafeInitiate } from "../../redux/Actions/DashboardActions";
 
@@ -18,6 +18,7 @@ const AddCafe = ({ onClick }) => {
   const handleChange = (e) => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });
+    console.log(state);
   };
 
   const handleSubmit = (e) => {
