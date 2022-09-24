@@ -31,7 +31,6 @@ const AddCafe = ({ onClick }) => {
     } else {
       setMessage({ error: false, msg: "카페가 추가되었습니다." });
     }
-
     dispatch(addCafeInitiate(state));
     setState({ place_name: "", address_name: "", reason: "" });
   };

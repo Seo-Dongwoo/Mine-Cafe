@@ -60,7 +60,7 @@ const SignupForm = () => {
           {error}
         </span>
       )}
-      <div className="input-container">
+      <div className="signup-input-container">
         <AuthInput
           type="text"
           onChange={(e) => setEmail(e.target.value)}
