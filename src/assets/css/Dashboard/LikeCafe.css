@@ -1,0 +1,12 @@
+.like-box {
+  width: 70px;
+  font-weight: bold;
+}
+.fill-btn {
+  width: 30px;
+  color: red;
+}
+
+.outline-btn {
+  width: 30px;
+}

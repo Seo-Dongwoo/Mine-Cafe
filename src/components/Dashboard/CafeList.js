@@ -6,6 +6,7 @@ import {
   deleteCafeInitiate,
   getCafesInitiate,
 } from "../../redux/Actions/DashboardActions";
+import LikeCafe from "./LikeCafe";
 
 const CafeList = () => {
   const { cafes } = useSelector((state) => state.cafeReducer);
@@ -40,7 +41,10 @@ const CafeList = () => {
               <td>{cafe.address_name}</td>
               <td>{cafe.reason}</td>
               <td className="list-btn-box">
-                <button className="edit-btn">Edit</button>
+                {/* <button className="edit-btn" cafe={cafe}>
+                  Edit
+                </button> */}
+                <LikeCafe cafe={cafe} />
                 <button
                   className="delete-btn"
                   onClick={() => deleteHandler(cafe.id)}

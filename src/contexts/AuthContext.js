@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
 
 const AuthContext = React.createContext();
 
@@ -18,7 +20,13 @@ export const AuthProvider = ({ children }) => {
 
   // 로그인
   const login = (email, password) => {
-    return auth.signInWithEmailAndPassword(email, password);
+    return auth
+      .signInWithEmailAndPassword(email, password)
+      .then(async (result) => {
+        let user = result.user.uid;
+        console.log(user);
+        await addDoc(collection(db, "users"), { user });
+      });
   };
 
   // 로그아웃
@@ -30,14 +38,22 @@ export const AuthProvider = ({ children }) => {
   const googleLogin = () => {
     const googleProvider = new GoogleAuthProvider();
     googleProvider.setCustomParameters({ prompt: "select_account" });
-    return auth.signInWithPopup(googleProvider);
+    return auth.signInWithPopup(googleProvider).then(async (result) => {
+      let user = result.user.uid;
+      console.log(user);
+      await addDoc(collection(db, "users"), { user });
+    });
   };
 
   // 깃허브 로그인
   const githubLogin = () => {
     const githubProvider = new GithubAuthProvider();
     githubProvider.setCustomParameters({ prompt: "select_account" });
-    return auth.signInWithPopup(githubProvider);
+    return auth.signInWithPopup(githubProvider).then(async (result) => {
+      let user = result.user.uid;
+      console.log(user);
+      await addDoc(collection(db, "users"), { user });
+    });
   };
 
   // 비밀번호 찾기
