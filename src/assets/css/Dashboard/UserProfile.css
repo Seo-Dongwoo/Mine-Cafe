@@ -1,0 +1,66 @@
+.profile-container {
+  height: 80%;
+  width: 85%;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.54);
+  overflow: hidden;
+}
+
+.profile-photo-box {
+  margin-top: 100px;
+  width: 100%;
+  height: 40%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.profile-title {
+  width: 30%;
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Permanent Marker";
+  color: #ffc107;
+}
+
+.profile-photo {
+  height: 100%;
+  border-radius: 140px;
+}
+
+.go-mycafe {
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  color: #8a631a;
+  align-items: center;
+  margin-right: 20px;
+}
+.go-icon {
+  width: 1.4rem;
+  margin-right: 10px;
+}
+
+.profile-name {
+  text-align: center;
+}
+
+.profile-name h3 {
+  margin-top: 10px;
+  color: gray;
+}
+
+@media (max-width: 1460px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-photo-box {
+    height: 40%;
+    padding-left: 0;
+  }
+  .profile-title {
+    margin: 30px auto;
+  }
+}

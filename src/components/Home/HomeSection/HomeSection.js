@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/Home/HomeSection.css";
+import "../../../assets/css/Home/HomeSection.css";
 import SectionButton from "./SectionButton";
 
 const HomeSection = () => {

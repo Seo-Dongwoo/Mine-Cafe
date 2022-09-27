@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import "../../assets/css/Login/LoginForm.css";
-import AuthButton from "../AuthCommon/AuthButton";
-import AuthInput from "../AuthCommon/AuthInput";
+import "../../../assets/css/Login/LoginForm.css";
+import AuthButton from "../../Common/AuthCommon/AuthButton";
+import AuthInput from "../../Common/AuthCommon/AuthInput";
 import LoginKeep from "./LoginKeep";
 import OtherLogin from "./OtherLogin";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");

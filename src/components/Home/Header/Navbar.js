@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "../Button/Button";
+import { Button } from "../../Common/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
-import "../../assets/css/Navbar.css";
-import { useAuth } from "../../contexts/AuthContext";
+import "../../../assets/css/Navbar.css";
+import { useAuth } from "../../../contexts/AuthContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);

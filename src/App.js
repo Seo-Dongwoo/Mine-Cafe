@@ -5,13 +5,13 @@ import Signup from "./pages/Signup/Signup";
 import FindPassword from "./pages/FindPassword/FindPassword";
 import SearchCafe from "./pages/SearchCafe/SearchCafe";
 import MyCafe from "./pages/MyCafe/MyCafe";
+import Profile from "./pages/MyCafe/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./contexts/AuthContext";
 import { KakaoProvider } from "./contexts/KakaoContext";
 import { ToggleProvider } from "./contexts/ToggleContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-
 const App = () => {
   return (
     <AuthProvider>
@@ -29,6 +29,14 @@ const App = () => {
                 element={
                   <ProtectedRoute>
                     <MyCafe />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/my-cafe/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
                   </ProtectedRoute>
                 }
               />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../../assets/css/FindPassword/FindPasswordForm.css";
-import AuthInput from "../AuthCommon/AuthInput";
-import AuthButton from "../AuthCommon/AuthButton";
+import "../../../assets/css/FindPassword/FindPasswordForm.css";
+import AuthInput from "../../Common/AuthCommon/AuthInput";
+import AuthButton from "../../Common/AuthCommon/AuthButton";
 import { Link, Navigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
 const FindPasswordForm = () => {
   const [email, setEmail] = useState("");
