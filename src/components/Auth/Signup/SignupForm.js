@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../../assets/css/Signup/SignupForm.css";
-import AuthInput from "../AuthCommon/AuthInput";
-import AuthButton from "../AuthCommon/AuthButton";
+import "../../../assets/css/Signup/SignupForm.css";
+import AuthInput from "../../Common/AuthCommon/AuthInput";
+import AuthButton from "../../Common/AuthCommon/AuthButton";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");

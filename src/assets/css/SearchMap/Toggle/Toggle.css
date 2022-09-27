@@ -33,6 +33,7 @@
   color: rgb(53, 216, 53);
   align-items: center;
   justify-content: center;
+  z-index: 15;
 }
 
 .toggle-off #result-list {

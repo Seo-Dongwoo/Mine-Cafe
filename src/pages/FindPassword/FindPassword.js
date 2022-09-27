@@ -1,5 +1,5 @@
 import React from "react";
-import FindPasswordForm from "../../components/FindPassword/FindPasswordForm";
+import FindPasswordForm from "../../components/Auth/FindPassword/FindPasswordForm";
 
 const FindPassword = () => {
   return (

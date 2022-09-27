@@ -18,7 +18,6 @@ const AddCafe = ({ onClick }) => {
   const handleChange = (e) => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });
-    console.log(state);
   };
 
   const handleSubmit = (e) => {

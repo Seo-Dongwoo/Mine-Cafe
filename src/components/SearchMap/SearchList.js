@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../assets/css/SearchMap/Toggle/SearchList.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import AddCafeModal from "./AddCafeModal";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/Common/AuthInput.css";
+import "../../../assets/css/Common/AuthInput.css";
 
 const AuthInput = ({ type, placeholder, required, onChange }) => {
   return (
