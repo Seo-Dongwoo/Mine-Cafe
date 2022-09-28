@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useAuth } from "../../contexts/AuthContext";
 import "../../assets/css/SearchMap/Toggle/AddCafeModal.css";
 import Category from "../Common/Category";
 import { useDispatch } from "react-redux";
 import { addCafeInitiate } from "../../redux/Actions/DashboardActions";
 
 const AddCafeModal = ({ modal, setModal }) => {
+  const { currentUser } = useAuth();
   const initialState = {
+    user_id: currentUser.uid,
     place_name: "",
     address_name: "",
     reason: "",

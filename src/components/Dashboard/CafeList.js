@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useAuth } from "../../contexts/AuthContext";
 import "../../assets/css/Dashboard/CafeList.css";
 import { Table } from "react-bootstrap";
 import {
@@ -14,11 +15,16 @@ const CafeList = () => {
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
   const { cafes } = useSelector((state) => state.cafeReducer);
+  const { currentUser } = useAuth();
   const dispatch = useDispatch();
 
-  const deleteHandler = (id) => {
-    if (window.confirm("추천 카페를 삭제하시겠습니까?")) {
-      dispatch(deleteCafeInitiate(id));
+  const deleteHandler = (id, user_id) => {
+    if (currentUser.uid === user_id) {
+      if (window.confirm("추천 카페를 삭제하시겠습니까?")) {
+        dispatch(deleteCafeInitiate(id));
+      }
+    } else {
+      alert("삭제 할 수 없습니다.");
     }
   };
 
@@ -49,7 +55,7 @@ const CafeList = () => {
                   <LikeCafe cafe={cafe} />
                   <button
                     className="delete-btn"
-                    onClick={() => deleteHandler(cafe.id)}
+                    onClick={() => deleteHandler(cafe.id, cafe.user_id)}
                   >
                     Delete
                   </button>

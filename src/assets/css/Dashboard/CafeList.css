@@ -2,7 +2,6 @@
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-
   align-items: center;
   margin: 0 auto;
 }
@@ -46,7 +45,7 @@
 }
 .list-footer {
   position: fixed;
-  bottom: 150px;
+  bottom: 120px;
   left: 35px;
   width: 100%;
 }
@@ -54,7 +53,7 @@
 @media (max-width: 1460px) {
   .list-footer {
     position: fixed;
-    bottom: 100px;
+    bottom: 80px;
     left: -10px;
     width: 100%;
   }
@@ -72,12 +71,6 @@
 
   .delete-btn {
     margin: 5px 5px;
-  }
-  .list-footer {
-    position: fixed;
-    bottom: 100px;
-    left: -10px;
-    width: 100%;
   }
 }
 
