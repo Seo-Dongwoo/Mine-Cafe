@@ -1,6 +1,6 @@
 .search-form {
   width: 220px;
-  height: 35px;
+  height: 50px;
 }
 .banner-input {
   width: 100%;
@@ -11,8 +11,10 @@
 
 .banner-input::placeholder {
   color: rgb(155, 153, 153);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
+  align-items: center;
+  padding-left: 0;
 }
 
 .toggle-search-form {
@@ -33,4 +35,6 @@
   color: rgb(155, 153, 153);
   font-size: 1rem;
   font-weight: bold;
+  align-items: center;
+  padding-left: 0;
 }

@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 65vh;
+  height: 55vh;
   width: 30vw;
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -45,7 +45,7 @@
 
 .keep-container {
   width: 65%;
-  margin: 0;
+  margin-top: 5px;
 }
 
 .login-btn-container {
@@ -79,15 +79,16 @@
 
 .service-container {
   width: 100%;
+  margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   cursor: pointer;
   text-decoration: none;
 }
 
 .find-password {
   text-decoration: none;
-  color: white;
+  color: rgb(43, 43, 243);
 }
 
 .signup-link {
@@ -96,9 +97,20 @@
   color: white;
 }
 
+.signup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.signup h4 {
+  color: rgb(43, 43, 243);
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1180px) {
   .login-form {
-    height: 65vh;
+    height: 55vh;
     width: 40vw;
   }
 
@@ -109,7 +121,7 @@
 
 @media screen and (max-width: 760px) {
   .login-form {
-    height: 65vh;
+    height: 55vh;
     width: 70vw;
   }
 

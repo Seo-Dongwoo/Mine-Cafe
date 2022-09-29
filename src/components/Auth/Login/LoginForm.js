@@ -61,61 +61,66 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <Link to="/" className="form-title-link">
-        <h2 className="form-title">Coffee</h2>
-      </Link>
-      {error && (
-        <span
-          style={{
-            marginBottom: "10px",
-            color: "red",
-            fontSize: "0.8rem",
-            fontWeight: "bold",
-          }}
-        >
-          {error}
-        </span>
-      )}
-      <div className="login-input-container">
-        <AuthInput
-          type="text"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <AuthInput
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <div className="keep-container">
-        <LoginKeep />
-      </div>
-      <div className="login-btn-container">
-        <AuthButton content="Login" />
-      </div>
-      <h5 className="otherlogin-title">또 다른 로그인</h5>
-      <hr className="boundary" />
-      <div className="otherlogin-container">
-        <OtherLogin className="github-login">
-          <BsGithub onClick={handleGithubLogin} />
-        </OtherLogin>
-        <OtherLogin className="google-login">
-          <FcGoogle onClick={handleGoogleLogin} />
-        </OtherLogin>
-      </div>
+    <div>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <Link to="/" className="form-title-link">
+          <h2 className="form-title">Login</h2>
+        </Link>
+        {error && (
+          <span
+            style={{
+              marginBottom: "10px",
+              color: "red",
+              fontSize: "0.8rem",
+              fontWeight: "bold",
+            }}
+          >
+            {error}
+          </span>
+        )}
+        <div className="login-input-container">
+          <AuthInput
+            type="text"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <AuthInput
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="keep-container">
+          <LoginKeep />
+        </div>
+        <div className="login-btn-container">
+          <AuthButton content="Login" />
+        </div>
+        <h5 className="otherlogin-title">Another Login</h5>
+        <hr className="boundary" />
+        <div className="otherlogin-container">
+          <OtherLogin className="github-login">
+            <BsGithub onClick={handleGithubLogin} />
+          </OtherLogin>
+          <OtherLogin className="google-login">
+            <FcGoogle onClick={handleGoogleLogin} />
+          </OtherLogin>
+        </div>
+      </form>
       <div className="service-container">
         <Link to="/findPassword" className="find-password">
-          <h4>비밀번호찾기</h4>
+          <h4>Forgot Password?</h4>
         </Link>
         <Link to="/signup" className="signup-link">
-          <h4 className="signup">회원가입</h4>
+          <div className="signup">
+            <h5>Don't have an account?</h5>
+            <h4>Sign Up</h4>
+          </div>
         </Link>
       </div>
-    </form>
+    </div>
   );
 };
 

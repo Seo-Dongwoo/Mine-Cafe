@@ -10,6 +10,7 @@ import {
   TiWeatherCloudy,
 } from "react-icons/ti";
 import { BsCloudFog } from "react-icons/bs";
+import { MdLocationOn } from "react-icons/md";
 
 const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
 
@@ -67,12 +68,12 @@ const GetWeather = () => {
 
   return (
     <div className="weather-container">
-      <h3 className="current-place">현재 위치 : {city}</h3>
-      <div className="weather-info">
-        <h3 className="weather">날씨 :</h3>
-        {weatherIcon()}
-      </div>
-      <h3 className="temp">온도 : {kelvinToFarenheit(temp)}°C</h3>
+      <div className="weather-icon">{weatherIcon()}</div>
+      <h3 className="temp">{kelvinToFarenheit(temp)}°C</h3>
+      <h3 className="current-place">
+        <MdLocationOn className="place-icon" />
+        {city}
+      </h3>
     </div>
   );
 };
