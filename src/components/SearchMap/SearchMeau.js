@@ -18,7 +18,7 @@ const SearchMeau = () => {
         </div>
       ) : (
         <div className="meau-container">
-          <Link to="/search-cafe" className="meau-link">
+          <Link to="/" className="meau-link">
             <BsList className="meau-icon" />
             <h1 className="meau-title">Coffee</h1>
           </Link>

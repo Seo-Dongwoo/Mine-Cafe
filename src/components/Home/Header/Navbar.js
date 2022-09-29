@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../../Common/Button/Button";
+import { FiCoffee } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import "../../../assets/css/Navbar.css";
 import { useAuth } from "../../../contexts/AuthContext";
@@ -45,8 +46,8 @@ function Navbar() {
         <nav className="navbar">
           <div className="navbar-container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+              <FiCoffee className="coffee-icon" />
               Coffee
-              <i className="fas fa-coffee"></i>
             </Link>
             <div className="mobile-menu-icon" onClick={handleClick}>
               <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -89,8 +90,8 @@ function Navbar() {
         <nav className="navbar">
           <div className="navbar-container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+              <FiCoffee className="fas fa-coffee" />
               Coffee
-              <i className="fas fa-coffee"></i>
             </Link>
             <div className="mobile-menu-icon" onClick={handleClick}>
               <i className={click ? "fas fa-times" : "fas fa-bars"} />

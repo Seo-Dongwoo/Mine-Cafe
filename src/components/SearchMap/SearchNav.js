@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../assets/css/SearchMap/Toggle/SearchNav.css";
 
 const SearchNav = () => {

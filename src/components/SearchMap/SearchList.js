@@ -39,7 +39,7 @@ const SearchList = () => {
             <span>{item.phone}</span>
           </div>
           <button className="modal-btn" onClick={() => onModalHandler(item)}>
-            <span> 카페 추가</span>
+            <span>카페 추가</span>
           </button>
           {modal.open === true ? (
             <AddCafeModal modal={modal} setModal={setModal} />

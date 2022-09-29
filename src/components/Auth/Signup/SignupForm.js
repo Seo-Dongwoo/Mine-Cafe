@@ -53,7 +53,7 @@ const SignupForm = () => {
   return (
     <form className="signup-form" onSubmit={handleSubmit}>
       <Link to="/" className="form-title-link">
-        <h2 className="form-title">Coffee</h2>
+        <h2 className="form-title">SignUp</h2>
       </Link>
       {error && (
         <span style={{ color: "red", fontSize: "0.8rem", fontWeight: "bold" }}>
