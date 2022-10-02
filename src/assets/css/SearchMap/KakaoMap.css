@@ -1,15 +1,3 @@
-.search-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.map-container {
-  position: absolute;
-  width: 100%;
-  height: 968px;
-}
-
 #map {
   position: absolute;
   width: 100%;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../assets/css/Login/LoginKeep.css";
+import styled from "styled-components";
 
 const LoginKeep = () => {
   const [check, setCheck] = useState(false);
@@ -7,11 +7,21 @@ const LoginKeep = () => {
     target.checked ? setCheck(true) : setCheck(false);
   };
   return (
-    <div className="login-keep">
-      <input type="checkbox" className="keep-checkbox" onClick={onChange} />
+    <LoginKeepContainer>
+      <KeepCheckBox type="checkbox" onClick={onChange} />
       <h5>로그인 상태 유지</h5>
-    </div>
+    </LoginKeepContainer>
   );
 };
+
+const LoginKeepContainer = styled.div`
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+`;
+const KeepCheckBox = styled.input`
+  margin-right: 5px;
+`;
 
 export default LoginKeep;
