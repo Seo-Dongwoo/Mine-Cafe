@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "../../assets/css/SearchMap/Toggle/SearchList.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import AddCafeModal from "./AddCafeModal";
+import styled from "styled-components";
 
 const SearchList = () => {
   const [modal, setModal] = useState({
@@ -19,13 +20,13 @@ const SearchList = () => {
   };
 
   return (
-    <div id="result-list">
+    <ResultList>
       {Places.map((item, i) => (
-        <div key={item.id} className="result-items">
-          <div className="result-title">
-            <h4 className="title-number">{i + 1}</h4>
+        <ResultItem key={item.id}>
+          <Title>
+            <Number>{i + 1}</Number>
             <h4>{item.place_name}</h4>
-          </div>
+          </Title>
           <div>
             {item.road_address_name ? (
               <div>
@@ -35,20 +36,66 @@ const SearchList = () => {
               <span>{item.address_name}</span>
             )}
           </div>
-          <div className="result-phone">
+          <PhoneNumber>
             <span>{item.phone}</span>
-          </div>
-          <button className="modal-btn" onClick={() => onModalHandler(item)}>
-            <span>카페 추가</span>
-          </button>
+          </PhoneNumber>
+          <ModalBtn onClick={() => onModalHandler(item)}>
+            <ModalBtnName>카페 추가</ModalBtnName>
+          </ModalBtn>
           {modal.open === true ? (
             <AddCafeModal modal={modal} setModal={setModal} />
           ) : null}
-        </div>
+        </ResultItem>
       ))}
       <div id="pagination"></div>
-    </div>
+    </ResultList>
   );
 };
+
+const ResultList = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+`;
+
+const ResultItem = styled.div`
+  padding: 15px 0 0 15px;
+  height: 17%;
+  &:hover {
+    background-color: #eff7ff;
+  }
+`;
+
+const Title = styled.div`
+  cursor: pointer;
+  display: flex;
+  padding-bottom: 5px;
+`;
+
+const Number = styled.h4`
+  padding-right: 10px;
+`;
+
+const PhoneNumber = styled.div`
+  margin-top: 3px;
+  color: #aed0f3;
+  font-weight: bold;
+`;
+
+const ModalBtn = styled.button`
+  width: 200px;
+  height: 30px;
+  margin-top: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  border: 2px solid gray;
+  cursor: pointer;
+`;
+
+const ModalBtnName = styled.span`
+  font-size: 15px;
+  font-weight: bold;
+`;
 
 export default SearchList;

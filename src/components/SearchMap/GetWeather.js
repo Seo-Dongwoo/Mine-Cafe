@@ -10,7 +10,8 @@ import {
   TiWeatherCloudy,
 } from "react-icons/ti";
 import { BsCloudFog } from "react-icons/bs";
-import { MdLocationOn } from "react-icons/md";
+import { Place } from "@styled-icons/material-sharp/Place";
+import styled from "styled-components";
 
 const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
 
@@ -67,15 +68,47 @@ const GetWeather = () => {
   }, [getCurrentWeather]);
 
   return (
-    <div className="weather-container">
-      <div className="weather-icon">{weatherIcon()}</div>
-      <h3 className="temp">{kelvinToFarenheit(temp)}°C</h3>
-      <h3 className="current-place">
-        <MdLocationOn className="place-icon" />
+    <WeatherContainer>
+      <WeatherIcon>{weatherIcon()}</WeatherIcon>
+      <Temperature>{kelvinToFarenheit(temp)}°C</Temperature>
+      <CurrentPlace>
+        <PlaceIcon />
         {city}
-      </h3>
-    </div>
+      </CurrentPlace>
+    </WeatherContainer>
   );
 };
+
+const WeatherContainer = styled.div`
+  width: 100%;
+  height: 20%;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+`;
+
+const WeatherIcon = styled.div`
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  margin: 0 auto;
+`;
+
+const Temperature = styled.h3`
+  margin-top: 10px;
+`;
+
+const CurrentPlace = styled.h3`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+`;
+
+const PlaceIcon = styled(Place)`
+  width: 20px;
+`;
 
 export default GetWeather;

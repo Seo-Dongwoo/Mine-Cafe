@@ -1,17 +1,23 @@
 import React from "react";
 import KakaoMap from "./KakaoMap";
-import "../../assets/css/SearchMap/KakaoMap.css";
 import Banner from "./Banner";
 import Toggle from "./Toggle";
+import styled from "styled-components";
 
 const KakaoContainer = () => {
   return (
-    <div className="search-container">
+    <Container>
       <Banner />
       <Toggle />
       <KakaoMap />
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+}`;
 
 export default KakaoContainer;

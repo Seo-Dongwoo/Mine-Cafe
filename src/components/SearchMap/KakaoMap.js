@@ -2,6 +2,7 @@
 import React, { useEffect, useContext } from "react";
 import "../../assets/css/SearchMap/KakaoMap.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
+import styled from "styled-components";
 
 const KakaoMap = () => {
   const { Place, setPlaces } = useContext(KakaoContext);
@@ -132,16 +133,22 @@ const KakaoMap = () => {
   }, [Place]);
 
   return (
-    <div className="map-container">
-      <div id="map"></div>
+    <MapWrap>
+      <div id="map" />
       <div id="map-category">
         <div id="CE7">
           <span className="category_bg cafe"></span>
           주변 카페
         </div>
       </div>
-    </div>
+    </MapWrap>
   );
 };
+
+const MapWrap = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 968px;
+`;
 
 export default KakaoMap;

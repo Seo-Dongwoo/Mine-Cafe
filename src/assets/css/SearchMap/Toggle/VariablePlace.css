@@ -1,17 +1,3 @@
-.variable-container {
-  position: relative;
-  width: 100%;
-  height: 25%;
-  border-bottom: 1px solid #ddd;
-}
-
-.variable-title {
-  position: absolute;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-}
-
 #category {
   position: absolute;
   margin: 70px 100px;

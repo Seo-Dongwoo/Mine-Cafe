@@ -1,22 +1,30 @@
 import React, { useContext } from "react";
-import "../../assets/css/SearchMap/Banner.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import SearchInput from "./SearchInput";
-import SearchMeau from "./SearchMeau";
+import SearchMenu from "./SearchMenu";
+import styled from "styled-components";
 
 const SearchInfo = () => {
   const { handleSubmit, onChange, inputText } = useContext(KakaoContext);
 
   return (
-    <div className="banner">
-      <SearchMeau />
+    <Banner>
+      <SearchMenu />
       <SearchInput
         handleSubmit={handleSubmit}
         onChange={onChange}
         inputText={inputText}
       />
-    </div>
+    </Banner>
   );
 };
+
+const Banner = styled.div`
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  top: 15px;
+  left: 15px;
+`;
 
 export default SearchInfo;
