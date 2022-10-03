@@ -6,10 +6,11 @@ import {
   doc,
 } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import "../../assets/css/Dashboard/LikeCafe.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { db } from "../../firebase";
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import styled from "styled-components";
+import { Heart } from "@styled-icons/entypo/Heart";
+import { HeartOutlined } from "@styled-icons/entypo/HeartOutlined";
 
 const LikeCafe = ({ cafe }) => {
   const [likes, setLikes] = useState([]);
@@ -39,17 +40,25 @@ const LikeCafe = ({ cafe }) => {
   };
 
   return (
-    <div className="like-box" onClick={likePost}>
-      {hasLiked ? (
-        <BsSuitHeartFill className="fill-btn" />
-      ) : (
-        <BsSuitHeart className="outline-btn" />
-      )}
-      <div className="like-people">
-        {likes.length > 0 && <p> {likes.length} likes</p>}
-      </div>
-    </div>
+    <LikeButton onClick={likePost}>
+      {hasLiked ? <FillHeart /> : <OutlineHeart />}
+      <div>{likes.length > 0 && <p> {likes.length} likes</p>}</div>
+    </LikeButton>
   );
 };
+
+const LikeButton = styled.div`
+  width: 70px;
+  font-weight: bold;
+`;
+
+const FillHeart = styled(Heart)`
+  width: 50px;
+  color: red;
+`;
+
+const OutlineHeart = styled(HeartOutlined)`
+  width: 50px;
+`;
 
 export default LikeCafe;

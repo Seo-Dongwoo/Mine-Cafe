@@ -44,7 +44,7 @@ const ToggleContent = () => {
 const Content = styled.div`
   position: absolute;
   width: 400px;
-  height: 968px;
+  height: 100%;
   z-index: 15;
 `;
 

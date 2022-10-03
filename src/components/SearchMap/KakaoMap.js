@@ -1,4 +1,4 @@
-/*global kakao*/
+/* global kakao */
 import React, { useEffect, useContext } from "react";
 import "../../assets/css/SearchMap/KakaoMap.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
@@ -148,7 +148,7 @@ const KakaoMap = () => {
 const MapWrap = styled.div`
   position: absolute;
   width: 100%;
-  height: 968px;
+  height: 100%;
 `;
 
 export default KakaoMap;

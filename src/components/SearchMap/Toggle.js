@@ -35,7 +35,7 @@ const Toggle = () => {
 const ToggleOn = styled.div`
   position: absolute;
   width: 30px;
-  height: 968px;
+  height: 100%;
   background-color: transparent;
   z-index: 15;
   margin-left: 400px;
@@ -43,15 +43,19 @@ const ToggleOn = styled.div`
 
 const ToggleOff = styled.div`
   position: absolute;
-  width: 30px;
-  height: 968px;
+  width: 0;
+  height: 100%;
   background-color: transparent;
   z-index: 15;
+  margin-left: 10px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ToggleBox = styled.div`
   position: absolute;
-  width: 100%;
+  width: 40px;
   height: 50px;
   background-color: white;
   overflow: hidden;
@@ -76,6 +80,7 @@ const RightIcon = styled(ChevronRight)`
   color: rgb(53, 216, 53);
   align-items: center;
   justify-content: center;
+  margin-left: 5px;
   z-index: 15;
 `;
 export default Toggle;

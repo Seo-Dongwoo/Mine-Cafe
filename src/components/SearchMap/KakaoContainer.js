@@ -15,9 +15,9 @@ const KakaoContainer = () => {
 };
 
 const Container = styled.div`
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 100%;
-}`;
+`;
 
 export default KakaoContainer;
