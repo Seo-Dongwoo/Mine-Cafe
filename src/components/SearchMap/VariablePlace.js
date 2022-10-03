@@ -12,7 +12,7 @@ const VariablePlace = () => {
     script.async = true;
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}&libraries=services&autoload=false`;
 
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 
     script.onload = () => {
       kakao.maps.load(() => {

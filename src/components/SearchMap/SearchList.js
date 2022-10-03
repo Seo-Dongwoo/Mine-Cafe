@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../assets/css/SearchMap/Toggle/SearchList.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
 import AddCafeModal from "./AddCafeModal";
@@ -16,8 +16,11 @@ const SearchList = () => {
       content: content,
       open: !modal.open,
     });
-    console.log(content);
   };
+
+  useEffect(() => {
+    console.log(Places);
+  }, [Places]);
 
   return (
     <ResultList>
@@ -60,7 +63,7 @@ const ResultList = styled.div`
 
 const ResultItem = styled.div`
   padding: 15px 0 0 15px;
-  height: 17%;
+  height: 20%;
   &:hover {
     background-color: #eff7ff;
   }
