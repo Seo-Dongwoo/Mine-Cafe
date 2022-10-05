@@ -5,11 +5,11 @@ import AddCafeModal from "./AddCafeModal";
 import styled from "styled-components";
 
 const SearchList = () => {
+  const { Places } = useContext(KakaoContext);
   const [modal, setModal] = useState({
     content: {},
     open: false,
   });
-  const { Places } = useContext(KakaoContext);
 
   const onModalHandler = (content) => {
     setModal({
@@ -18,9 +18,7 @@ const SearchList = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(Places);
-  }, [Places]);
+  useEffect(() => {}, [Places]);
 
   return (
     <ResultList>

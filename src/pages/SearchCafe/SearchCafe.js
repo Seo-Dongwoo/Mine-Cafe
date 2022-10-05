@@ -3,9 +3,9 @@ import KakaoContainer from "../../components/SearchMap/KakaoContainer";
 
 const SearchCafe = () => {
   return (
-    <React.Fragment>
+    <div>
       <KakaoContainer />
-    </React.Fragment>
+    </div>
   );
 };
 

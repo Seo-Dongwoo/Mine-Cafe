@@ -10,19 +10,19 @@ const SearchMeau = () => {
   return (
     <>
       {toggleInfo ? (
-        <ToggleMenu>
-          <ToggleMenuLink to="/">
-            <ToggleMenuIcon />
-            <MenuTitle>Coffee</MenuTitle>
-          </ToggleMenuLink>
-        </ToggleMenu>
-      ) : (
         <Menu>
           <MenuLink to="/">
             <ToggleMenuIcon />
             <MenuTitle>Coffee</MenuTitle>
           </MenuLink>
         </Menu>
+      ) : (
+        <ToggleMenu>
+          <ToggleMenuLink to="/">
+            <ToggleMenuIcon />
+            <MenuTitle>Coffee</MenuTitle>
+          </ToggleMenuLink>
+        </ToggleMenu>
       )}
     </>
   );

@@ -1,21 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const SearchNav = () => {
   return (
     <Nav>
       <NavList>
         <NavItem>
-          <NavItemLink>검색</NavItemLink>
+          <NavItemLink to="/search-cafe">검색</NavItemLink>
         </NavItem>
         <NavItem>
-          <NavItemLink>길찾기</NavItemLink>
+          <NavItemLink to="/my-cafe">추가목록</NavItemLink>
         </NavItem>
         <NavItem>
-          <NavItemLink>버스</NavItemLink>
+          <NavItemLink to="/search-cafe">버스</NavItemLink>
         </NavItem>
         <NavItem>
-          <NavItemLink>지하철</NavItemLink>
+          <NavItemLink to="/search-cafe">지하철</NavItemLink>
         </NavItem>
       </NavList>
     </Nav>
@@ -43,7 +44,7 @@ const NavItem = styled.li`
   padding: 20px 10px;
 `;
 
-const NavItemLink = styled.a`
+const NavItemLink = styled(Link)`
   display: block;
   width: 60px;
   height: 40px;
