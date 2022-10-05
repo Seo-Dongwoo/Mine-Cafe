@@ -12,6 +12,13 @@ const Toggle = () => {
   return (
     <>
       {toggleInfo ? (
+        <ToggleOff>
+          <SearchList />
+          <ToggleBox onClick={handleToggle}>
+            <RightIcon />
+          </ToggleBox>
+        </ToggleOff>
+      ) : (
         <div>
           <ToggleContent />
           <ToggleOn>
@@ -20,13 +27,6 @@ const Toggle = () => {
             </ToggleBox>
           </ToggleOn>
         </div>
-      ) : (
-        <ToggleOff>
-          <SearchList />
-          <ToggleBox onClick={handleToggle}>
-            <RightIcon />
-          </ToggleBox>
-        </ToggleOff>
       )}
     </>
   );
@@ -34,7 +34,7 @@ const Toggle = () => {
 
 const ToggleOn = styled.div`
   position: absolute;
-  width: 30px;
+  width: 40px;
   height: 100%;
   background-color: transparent;
   z-index: 15;

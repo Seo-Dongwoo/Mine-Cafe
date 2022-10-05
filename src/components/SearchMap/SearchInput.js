@@ -10,14 +10,6 @@ const SearchInput = () => {
   return (
     <>
       {toggleInfo ? (
-        <ToggleSearch onSubmit={handleSubmit}>
-          <ToggleSearchInput
-            placeholder="내 장소 및 카페 검색"
-            onChange={onChange}
-            value={inputText}
-          />
-        </ToggleSearch>
-      ) : (
         <SearchForm onSubmit={handleSubmit}>
           <SearchFormInput
             placeholder="내 장소 및 카페 검색"
@@ -25,12 +17,20 @@ const SearchInput = () => {
             value={inputText}
           />
         </SearchForm>
+      ) : (
+        <ToggleSearchForm onSubmit={handleSubmit}>
+          <ToggleSearchInput
+            placeholder="내 장소 및 카페 검색"
+            onChange={onChange}
+            value={inputText}
+          />
+        </ToggleSearchForm>
       )}
     </>
   );
 };
 
-const ToggleSearch = styled.form`
+const ToggleSearchForm = styled.form`
   width: 90%;
   height: 25%;
   margin: auto;

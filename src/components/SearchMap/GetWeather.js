@@ -96,7 +96,7 @@ const WeatherIcon = styled.div`
 `;
 
 const Temperature = styled.h3`
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 
 const CurrentPlace = styled.h3`
