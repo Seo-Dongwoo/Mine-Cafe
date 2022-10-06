@@ -12,7 +12,6 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
-  console.log(currentUser);
 
   // 회원가입
   const register = (email, password) => {

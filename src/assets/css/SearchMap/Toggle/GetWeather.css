@@ -1,7 +1,4 @@
 .weather-icon {
-  display: flex;
-  width: 60px;
-  height: 60px;
-  align-items: center;
-  margin: 0 auto;
+  width: 70px;
+  height: 70px;
 }
