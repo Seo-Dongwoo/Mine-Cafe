@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../../assets/css/SearchMap/Toggle/GetWeather.css";
 import axios from "axios";
 import {
   TiWeatherSunny,
@@ -9,16 +8,19 @@ import {
   TiWeatherSnow,
   TiWeatherCloudy,
 } from "react-icons/ti";
+import "../../assets/css/SearchMap/Toggle/GetWeather.css";
 import { BsCloudFog } from "react-icons/bs";
-import { Place } from "@styled-icons/material-sharp/Place";
+import { Location } from "@styled-icons/evil/Location";
 import styled from "styled-components";
 
 const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
 
 const GetWeather = () => {
   const [city, setCity] = useState("");
-  const [weather, setWeather] = useState("");
+  const [weatherIcon, setWeatherIcon] = useState("");
   const [temp, setTemp] = useState(0);
+  const [wind, setWind] = useState("");
+  const [humidity, setHumidity] = useState("");
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getCurrentWeather = () => {
@@ -31,15 +33,18 @@ const GetWeather = () => {
 
         axios.get(url).then((res) => {
           setCity(res.data.name);
-          setWeather(res.data.weather[0].id);
+          setWeatherIcon(res.data.weather[0].id);
           setTemp(res.data.main.temp);
+          setWind(res.data.wind.speed);
+          setHumidity(res.data.main.humidity);
         });
       });
     }
   };
 
-  const weatherIcon = () => {
-    let iconId = weather === 800 ? 0 : (parseInt(weather) / 100).toFixed(0);
+  const getWeatherIcon = () => {
+    let iconId =
+      weatherIcon === 800 ? 0 : (parseInt(weatherIcon) / 100).toFixed(0);
     switch (iconId) {
       case 0:
         return <TiWeatherSunny className="weather-icon" color="red" />;
@@ -60,7 +65,7 @@ const GetWeather = () => {
   };
 
   const kelvinToFarenheit = (k) => {
-    return (k - 273.15).toFixed(2);
+    return (k - 273.15).toFixed(1);
   };
 
   useEffect(() => {
@@ -69,12 +74,21 @@ const GetWeather = () => {
 
   return (
     <WeatherContainer>
-      <WeatherIcon>{weatherIcon()}</WeatherIcon>
-      <Temperature>{kelvinToFarenheit(temp)}°C</Temperature>
-      <CurrentPlace>
-        <PlaceIcon />
-        {city}
-      </CurrentPlace>
+      <LocationContent>
+        <CurrentPlace>
+          <LocationIcon />
+          {city}
+        </CurrentPlace>
+        <WindAndHumidity>
+          풍속 : {wind}m/s
+          <br />
+          습도 : {humidity}%
+        </WindAndHumidity>
+      </LocationContent>
+      <WeatherContent>
+        <WeatherIcon>{getWeatherIcon()}</WeatherIcon>
+        <Temperature>현재 기온 : {kelvinToFarenheit(temp)}°C</Temperature>
+      </WeatherContent>
     </WeatherContainer>
   );
 };
@@ -83,32 +97,51 @@ const WeatherContainer = styled.div`
   width: 100%;
   height: 20%;
   padding: 10px;
+  display: flex;
   border-bottom: 1px solid #ddd;
-  text-align: center;
+`;
+
+const LocationContent = styled.div`
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+`;
+
+const CurrentPlace = styled.h1`
+  width: 100%;
+  padding: 10px 0 10px;
+`;
+
+const WindAndHumidity = styled.div`
+  color: gray;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 10px;
+`;
+
+const WeatherContent = styled.div`
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 30px 0 0;
 `;
 
 const WeatherIcon = styled.div`
-  display: flex;
-  width: 60px;
-  height: 60px;
-  align-items: center;
-  margin: 0 auto;
+  text-align: center;
 `;
 
-const Temperature = styled.h3`
-  margin-top: 5px;
+const Temperature = styled.h5`
+  text-align: center;
 `;
 
-const CurrentPlace = styled.h3`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  justify-content: center;
-`;
-
-const PlaceIcon = styled(Place)`
-  width: 20px;
+const LocationIcon = styled(Location)`
+  width: 25px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: rgb(53, 216, 53);
 `;
 
 export default GetWeather;
