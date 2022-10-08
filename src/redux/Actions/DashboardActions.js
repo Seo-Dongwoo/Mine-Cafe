@@ -29,7 +29,7 @@ const deleteCafe = () => ({
 
 // 컬렉션의 여러 문서 수신 대기
 const cafeCollectionRef = collection(db, "posts");
-console.log(cafeCollectionRef);
+
 const q = query(cafeCollectionRef);
 
 export const getCafesInitiate = () => {

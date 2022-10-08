@@ -4,10 +4,10 @@ import HomeSection from "../../components/Home/HomeSection/HomeSection";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <HomeSection />
-    </div>
+    </>
   );
 };
 

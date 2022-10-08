@@ -15,7 +15,7 @@ const HomeSection = () => {
         autoPlay
         loop
         muted
-      ></HomeVideo>
+      />
     </Home>
   );
 };
