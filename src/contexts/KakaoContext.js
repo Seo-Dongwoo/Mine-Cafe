@@ -74,8 +74,18 @@ export const KakaoProvider = ({ children }) => {
         // 카페 카테고리에 클릭 이벤트 설정
         document.getElementById("CE7").addEventListener("click", findCafe);
 
-        // 키워드로 장소를 검색
-        ps.keywordSearch(Place, placesSearchCB);
+        // 검색할 키워드 값이 빈 값이여도 키워드 검색을 호출해서 400 오류 발생
+        // 따라서, 키워드 값이 빈 값인 경우 키워드 검색 API를 호출하지 않게 조건문으로 값을 체크
+        function checkPlace() {
+          if (!Place) {
+            return false;
+          } else {
+            // 키워드로 장소를 검색
+            ps.keywordSearch(Place, placesSearchCB);
+          }
+        }
+
+        checkPlace();
 
         // 키워드 검색 완료 시 호출되는 콜백함수
         function placesSearchCB(data, status, pagination) {
@@ -103,6 +113,7 @@ export const KakaoProvider = ({ children }) => {
             return;
           }
         }
+        console.log(Places);
 
         // 검색결과 목록 하단에 페이지 번호 표시
         function displayPagination(pagination) {

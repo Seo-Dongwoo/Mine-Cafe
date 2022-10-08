@@ -109,9 +109,9 @@ const LocationContent = styled.div`
   padding-left: 20px;
 `;
 
-const CurrentPlace = styled.h1`
+const CurrentPlace = styled.h3`
   width: 100%;
-  padding: 10px 0 10px;
+  padding: 10px 0 20px;
 `;
 
 const WindAndHumidity = styled.div`
@@ -138,7 +138,7 @@ const Temperature = styled.h5`
 `;
 
 const LocationIcon = styled(Location)`
-  width: 25px;
+  width: 20px;
   margin-right: 5px;
   margin-bottom: 5px;
   color: rgb(53, 216, 53);
