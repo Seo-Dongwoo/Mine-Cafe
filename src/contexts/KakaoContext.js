@@ -159,16 +159,19 @@ export const KakaoProvider = ({ children }) => {
           kakao.maps.event.addListener(marker, "click", function () {
             // 마커를 클릭하면 장소명이 인포윈도우에 표출
             infowindow.setContent(
-              `<div style="display: block;
+              `<div style="display: flex;
               background: #50627F;
-              color: #fff;
-              text-align: center;
-              width: 230px;
-              height: 24px;
+              width: 300px;
+              height: 40px;
               line-height:22px;
-              border-radius:5px;
-              padding:0px 5px;">` +
+              align-items: center;
+              justify-content: center; " >` +
+                `<a style="color: #fff; 
+                text-decoration: none;" 
+                target="_blank" 
+                href=${place.place_url}>` +
                 place.place_name +
+                "</a>" +
                 "</div>"
             );
             infowindow.open(map, marker);

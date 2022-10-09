@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../assets/css/SearchMap/Toggle/SearchList.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
+import { Link } from "react-router-dom";
 import AddCafeModal from "./AddCafeModal";
 import styled from "styled-components";
 
@@ -26,7 +27,9 @@ const SearchList = () => {
         <ResultItem key={item.id}>
           <Title>
             <Number>{i + 1}</Number>
-            <h4>{item.place_name}</h4>
+            <TitleLink target="_blank" href={item.place_url} rel="noreferrer">
+              <h3>{item.place_name}</h3>
+            </TitleLink>
           </Title>
           <div>
             {item.road_address_name ? (
@@ -77,9 +80,14 @@ const Number = styled.h4`
   padding-right: 10px;
 `;
 
+const TitleLink = styled.a`
+  text-decoration: none;
+  color: black;
+`;
+
 const PhoneNumber = styled.div`
   margin-top: 3px;
-  color: #aed0f3;
+  color: gray;
   font-weight: bold;
 `;
 
@@ -90,8 +98,12 @@ const ModalBtn = styled.button`
   color: black;
   background-color: white;
   border-radius: 15px;
-  border: 2px solid gray;
+  border: 2px solid #a9a9a9;
   cursor: pointer;
+  &:hover {
+    background-color: #a9a9a9;
+    color: white;
+  }
 `;
 
 const ModalBtnName = styled.span`

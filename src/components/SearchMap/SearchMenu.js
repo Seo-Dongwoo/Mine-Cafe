@@ -13,14 +13,14 @@ const SearchMeau = () => {
         <Menu>
           <MenuLink to="/">
             <ToggleMenuIcon />
-            <MenuTitle>Coffee</MenuTitle>
+            <MenuTitle>Mine</MenuTitle>
           </MenuLink>
         </Menu>
       ) : (
         <ToggleMenu>
           <ToggleMenuLink to="/">
             <ToggleMenuIcon />
-            <MenuTitle>Coffee</MenuTitle>
+            <MenuTitle>Mine</MenuTitle>
           </ToggleMenuLink>
         </ToggleMenu>
       )}

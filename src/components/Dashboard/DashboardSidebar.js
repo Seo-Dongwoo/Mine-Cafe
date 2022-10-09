@@ -37,7 +37,7 @@ const DashboardSidebar = () => {
       <Brand>
         <BrandIcon />
         <TitleLink to="/">
-          <Title>Dashboard</Title>
+          <Title>Mine</Title>
         </TitleLink>
       </Brand>
       <SidebarMeau meaus={meaus} onClick={handleToggle} />
