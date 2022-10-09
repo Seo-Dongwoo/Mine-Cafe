@@ -42,13 +42,13 @@ function Navbar() {
   window.addEventListener("resize", showButton);
 
   return (
-    <>
+    <div>
       {currentUser ? (
         <NavbarWrap>
           <NavbarContainer>
             <NavbarLink to="/" onClick={closeMobileMenu}>
               <CoffeeIcon />
-              Coffee
+              Mine
             </NavbarLink>
             <MobileIcon onClick={handleClick}>
               <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -80,7 +80,7 @@ function Navbar() {
           <NavbarContainer>
             <NavbarLink to="/" onClick={closeMobileMenu}>
               <CoffeeIcon />
-              Coffee
+              Mine
             </NavbarLink>
             <MobileIcon onClick={handleClick}>
               <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -108,7 +108,7 @@ function Navbar() {
           </NavbarContainer>
         </NavbarWrap>
       )}
-    </>
+    </div>
   );
 }
 

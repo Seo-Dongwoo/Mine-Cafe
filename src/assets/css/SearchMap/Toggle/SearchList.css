@@ -3,13 +3,13 @@
 }
 
 #pagination a {
-  color: black;
+  color: #a9a9a9;
   font-size: 20px;
   text-decoration: none;
   margin: 0 10px;
 }
 
 #pagination a.on {
-  color: lightblue;
+  color: black;
   font-weight: bold;
 }
