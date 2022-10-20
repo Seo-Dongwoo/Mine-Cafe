@@ -1,25 +1,38 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { CgProfile } from "react-icons/cg";
+import { BiSearch } from "react-icons/bi";
+import { MdOutlineAddCircleOutline } from "react-icons/md";
 
-const SidebarMeau = ({ onClick, meaus }) => {
+const SidebarMeau = ({ onClick }) => {
   return (
     <SideBar>
-      {meaus.map((meau, index) => {
-        return (
-          <ItemLink to={meau.path} key={index} onClick={onClick}>
-            <Item>
-              {meau.icon}
-              <ItemSpan>{meau.name}</ItemSpan>
-            </Item>
-          </ItemLink>
-        );
-      })}
+      <ItemLink to="/my-cafe/profile">
+        <ItemBox>
+          <CgProfile style={{ width: "40px", height: "40px" }} />
+          <ItemTitle>내 정보</ItemTitle>
+        </ItemBox>
+      </ItemLink>
+      <ItemLink to="/search-cafe">
+        <ItemBox>
+          <BiSearch style={{ width: "40px", height: "40px" }} />
+          <ItemTitle>카페 검색</ItemTitle>
+        </ItemBox>
+      </ItemLink>
+      <ItemLink to="/my-cafe">
+        <ItemBox>
+          <MdOutlineAddCircleOutline
+            style={{ width: "40px", height: "40px" }}
+          />
+          <ItemTitle onClick={onClick}>카페 추가</ItemTitle>
+        </ItemBox>
+      </ItemLink>
     </SideBar>
   );
 };
 
-const SideBar = styled.div`
+const SideBar = styled.ul`
   width: 100%;
   margin-bottom: 20px;
 
@@ -37,7 +50,7 @@ const ItemLink = styled(NavLink)`
   text-decoration: none;
 `;
 
-const Item = styled.div`
+const ItemBox = styled.li`
   width: 100%;
   display: flex;
   align-items: center;
@@ -71,7 +84,7 @@ const Item = styled.div`
   }
 `;
 
-const ItemSpan = styled.span`
+const ItemTitle = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
 
@@ -83,4 +96,5 @@ const ItemSpan = styled.span`
     font-size: 0.9rem;
   }
 `;
+
 export default SidebarMeau;

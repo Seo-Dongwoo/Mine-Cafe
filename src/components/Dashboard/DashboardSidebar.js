@@ -3,34 +3,12 @@ import { Link } from "react-router-dom";
 import SidebarMeau from "./SidebarMeau";
 import AddCafe from "./AddCafe";
 import { ToggleContext } from "../../contexts/ToggleContext";
-import { CgProfile } from "react-icons/cg";
-import { BiSearch } from "react-icons/bi";
-import { MdOutlineAddCircleOutline } from "react-icons/md";
+
 import styled from "styled-components";
 import { Coffee } from "@styled-icons/boxicons-regular/Coffee";
 
 const DashboardSidebar = () => {
   const { handleToggle, toggleInfo } = useContext(ToggleContext);
-
-  const meaus = [
-    {
-      name: "내 정보",
-      path: "/my-cafe/profile",
-      icon: <CgProfile style={{ width: "40px", height: "40px" }} />,
-    },
-    {
-      name: "카페 검색",
-      path: "/search-cafe",
-      icon: <BiSearch style={{ width: "40px", height: "40px" }} />,
-    },
-    {
-      name: "카페 추가",
-      path: "/my-cafe",
-      icon: (
-        <MdOutlineAddCircleOutline style={{ width: "40px", height: "40px" }} />
-      ),
-    },
-  ];
 
   return (
     <SideBar>
@@ -40,7 +18,7 @@ const DashboardSidebar = () => {
           <Title>Mine</Title>
         </TitleLink>
       </Brand>
-      <SidebarMeau meaus={meaus} onClick={handleToggle} />
+      <SidebarMeau onClick={handleToggle} />
       {toggleInfo && <AddCafe onClick={handleToggle} />}
     </SideBar>
   );

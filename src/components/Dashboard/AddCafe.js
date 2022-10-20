@@ -107,6 +107,7 @@ const InputBox = styled.div`
   position: relative;
   text-align: center;
   top: 30px;
+  margin-left: 15px;
   @media (max-width: 1460px) {
     width: 80%;
   }
