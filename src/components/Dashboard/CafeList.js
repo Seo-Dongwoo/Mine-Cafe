@@ -6,7 +6,7 @@ import {
   deleteCafeInitiate,
   getCafesInitiate,
 } from "../../redux/Actions/DashboardActions";
-import LikeCafe from "./LikeCafe";
+import CafeListItem from "./CafeListItem";
 import Pagination from "./Pagination";
 import styled from "styled-components";
 
@@ -44,22 +44,12 @@ const CafeList = () => {
           </tr>
         </thead>
         <tbody>
-          {cafes.slice(offset, offset + limit).map((cafe, index) => {
-            return (
-              <Body key={cafe.id}>
-                <BodyItem>{index + 1}</BodyItem>
-                <BodyItem>{cafe.place_name}</BodyItem>
-                <BodyItem>{cafe.address_name}</BodyItem>
-                <BodyItem>{cafe.reason}</BodyItem>
-                <ListBtnBox>
-                  <LikeCafe cafe={cafe} />
-                  <Delete onClick={() => deleteHandler(cafe.id, cafe.user_id)}>
-                    Delete
-                  </Delete>
-                </ListBtnBox>
-              </Body>
-            );
-          })}
+          <CafeListItem
+            offset={offset}
+            deleteHandler={deleteHandler}
+            limit={limit}
+            cafes={cafes}
+          />
         </tbody>
       </TableContent>
       <Footer>
@@ -94,44 +84,6 @@ const HeadItem = styled.th`
   @media (max-width: 1150px) {
     width: 25%;
     font-size: 17px;
-  }
-`;
-
-const Body = styled.tr`
-  height: 80px;
-`;
-
-const BodyItem = styled.td`
-  padding: 3px;
-`;
-
-const ListBtnBox = styled.td`
-  width: 200px;
-  height: 50px;
-  display: flex;
-  @media (max-width: 1150px) {
-    width: 200px;
-  }
-`;
-
-const Delete = styled.button`
-  width: 40%;
-  height: 40px;
-  display: inline-block;
-  margin: 0 auto;
-  display: inline-block;
-  top: 50%;
-  transform: translateY(40%);
-  border: none;
-  color: white;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: orange;
-  cursor: pointer;
-
-  @media (max-width: 1150px) {
-    margin: 5px 5px;
   }
 `;
 

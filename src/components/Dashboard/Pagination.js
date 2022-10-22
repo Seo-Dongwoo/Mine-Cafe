@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Pagination = ({ total, page, setPage, limit }) => {
   const numPages = Math.ceil(total / limit);
+
   return (
     <ListPagination>
       <PaginationBtn onClick={() => setPage(page - 1)} disabled={page === 1}>

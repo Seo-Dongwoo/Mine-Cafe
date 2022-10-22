@@ -9,4 +9,5 @@
   src: url("./assets/fonts/PermanentMarker-Regular.ttf");
   font-family: "Merriweather", serif;
   src: url("./assets//fonts//Merriweather-Bold.ttf");
+  font-display: swap;
 }
