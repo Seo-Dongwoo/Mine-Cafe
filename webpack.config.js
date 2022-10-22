@@ -2,7 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   name: "React18-webpack-babel-setting", // 설정 이름
@@ -28,7 +30,15 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
+      },
     ],
+  },
+  optimization: {
+    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -40,11 +50,13 @@ module.exports = {
       // 리액트 자동 로드
       React: "react",
     }),
+
     new Dotenv(),
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "app.js",
+    sourceMapFilename: "[name].js.map",
   },
   devServer: {
     // 개발 서버 설정
