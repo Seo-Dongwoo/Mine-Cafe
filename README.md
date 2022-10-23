@@ -17,7 +17,9 @@
 - Firestore에 데이터 저장 및 가져오기
 ---
 ## 이슈
-
+---
+## 배포
+https://minecafelist.netlify.app
 
 
 
