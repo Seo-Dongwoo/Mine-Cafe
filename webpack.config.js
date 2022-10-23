@@ -55,6 +55,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/dist/",
     filename: "app.js",
     sourceMapFilename: "[name].js.map",
   },
