@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../assets/css/SearchMap/Toggle/SearchList.css";
 import { KakaoContext } from "../../contexts/KakaoContext";
-import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 import AddCafeModal from "./AddCafeModal";
 import styled from "styled-components";
 
 const SearchList = () => {
   const { Places } = useContext(KakaoContext);
+  const { currentUser } = useAuth();
   const [modal, setModal] = useState({
     content: {},
     open: false,
@@ -43,9 +44,12 @@ const SearchList = () => {
           <PhoneNumber>
             <span>{item.phone}</span>
           </PhoneNumber>
-          <ModalBtn onClick={() => onModalHandler(item)}>
-            <ModalBtnName>카페 추가</ModalBtnName>
-          </ModalBtn>
+          {currentUser ? (
+            <ModalBtn onClick={() => onModalHandler(item)}>
+              <ModalBtnName>카페 추가</ModalBtnName>
+            </ModalBtn>
+          ) : null}
+
           {modal.open === true ? (
             <AddCafeModal modal={modal} setModal={setModal} />
           ) : null}
