@@ -1,20 +1,17 @@
 import React, { Suspense } from "react";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import FindPassword from "./pages/FindPassword/FindPassword";
+import SearchCafe from "./pages/SearchCafe/SearchCafe";
+import MyCafe from "./pages/MyCafe/MyCafe";
+import Profile from "./pages/MyCafe/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./contexts/AuthContext";
 import { KakaoProvider } from "./contexts/KakaoContext";
 import { ToggleProvider } from "./contexts/ToggleContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-
-const Home = React.lazy((_) => import("./pages/Home/Home"));
-const Login = React.lazy((_) => import("./pages/Login/Login"));
-const Signup = React.lazy((_) => import("./pages/Signup/Signup"));
-const FindPassword = React.lazy((_) =>
-  import("./pages/FindPassword/FindPassword")
-);
-const SearchCafe = React.lazy((_) => import("./pages/SearchCafe/SearchCafe"));
-const MyCafe = React.lazy((_) => import("./pages/MyCafe/MyCafe"));
-const Profile = React.lazy((_) => import("./pages/MyCafe/Profile"));
 
 const App = () => {
   return (
