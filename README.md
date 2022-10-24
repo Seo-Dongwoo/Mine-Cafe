@@ -1,4 +1,4 @@
-# 나만의 카페 리스트 ☕
+# 나만의 카페 사이트 ☕
 ---
 ## 프로젝트에 대한 설명
 - Firebase와 Context Api를 연동하여 회원가입, 로그인, 비밀번호 찾기 기능 구현과 Oauth 기능 구현
@@ -19,7 +19,7 @@
 ## 이슈
 ---
 ## 배포
-https://minecafelist.netlify.app
+https://minecafe-web.netlify.app
 
 
 
