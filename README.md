@@ -17,11 +17,11 @@
 - Firestore에 데이터 저장 및 가져오기
 ---
 ## 이슈
-Authentication (src/contexts/AuthContext.js)
+### Authentication (src/contexts/AuthContext.js)
 - Oauth 로그인 과정에서 propmt가 뜨지 않는 버그에 직면하였지만 setCustomParameters를 이용하여 해결하였고 비동기로 Firestore에 로그인 유저 정보를 저장하였다.
 - react hooks을 사용하여 user의 상태를 관리하였다.
 
-Kakao Map API (src/contexts/KakaoContext.js)
+### Kakao Map API (src/contexts/KakaoContext.js)
 - react hooks를 이용하여 Place에 관한 상태를 관리하였다.
 - 검색할 키워드 값이 빈 값이여도 키워드 검색을 호출해서 400 error가 발생하였고, 키워드 값이 빈 값인 경우 키워드 검색 API를 호출하지 않게 조건문으로 값을 체크해주었다.
 ```
@@ -36,7 +36,7 @@ function checkPlace() {
 
 checkPlace();
 ```
-CAFE LIST
+### CAFE LIST
 - 전역적인 상태 관리를 하기 위해 가장 고민을 많이 했던 파트였고 상태 관리로는 Redux를 이용했다.
 - Map에 검색한 장소를 Firestore와 Redux 사용하여 CRUD를 진행 하였고, 카테고리 부분을 따로 컴포넌트로 만들었는데 목록이 뜨지 않아 난황을 겪었지만 value값을 잘 적용시켜 해결하였다.
 ```
@@ -148,11 +148,19 @@ const LikeCafe = ({ cafe }) => {
 };
 ```
 
-Styled-Components
+### Styled-Components
 - 처음에는 css폴더를 만들고 진행하였으나, styled-components도 사용해보고 싶어서 리팩토링을 진행하였고, className에 사용하는 삼항연산자에 대한 부분은 계속 공부중에있고 리랙토링 할 예정이다.
 
-그 외
+### 그 외
 - Firestore 필드에 카테고리를 나눠서 데이터를 저장하는 부분에서 어려웠지만 잘 이해하고 숙지하였다.
+
+POST부분
+![firestore1](https://user-images.githubusercontent.com/83106932/197471084-28be9b3f-469d-4532-84c7-962554e8036b.png)
+
+좋아요 부분
+![firestore2](https://user-images.githubusercontent.com/83106932/197471096-71d436b3-20e7-42c8-b495-8ec22f34f994.png)
+
+
 
 ---
 ## 배포
