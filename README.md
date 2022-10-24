@@ -112,7 +112,8 @@ const AddCafeModal = ({ modal, setModal }) => {
 - Redux를 이용한 상태 관리는 익숙치 않아서 다른 Redux를 공부하기 위한 프로젝트를 병행하면서 진행하였다.
 - Dashboard를 구현중에 로그인한 유저의 id와 좋아요 및 카페를 추가한 유저의 id가 같을 경우에만 좋아요를 취소할 수 있고 카페를 삭제할 수 있도록 구현하였다.
 ```
- const [likes, setLikes] = useState([]);
+const LikeCafe = ({ cafe }) => {
+  const [likes, setLikes] = useState([]);
   const [hasLiked, setHasLiked] = useState(false);
   const { currentUser } = useAuth();
 
@@ -146,7 +147,6 @@ const AddCafeModal = ({ modal, setModal }) => {
   );
 };
 ```
-  
 
 Styled-Components
 - 처음에는 css폴더를 만들고 진행하였으나, styled-components도 사용해보고 싶어서 리팩토링을 진행하였고, className에 사용하는 삼항연산자에 대한 부분은 계속 공부중에있고 리랙토링 할 예정이다.
