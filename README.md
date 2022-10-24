@@ -38,10 +38,121 @@ checkPlace();
 ```
 CAFE LIST
 - 전역적인 상태 관리를 하기 위해 가장 고민을 많이 했던 파트였고 상태 관리로는 Redux를 이용했다.
-- Map에 검색한 장소를 Firestore와 Redux 사용하여 CRUD를 진행 하였고, 카테고리 부분을 따로 컴포넌트로 만들었는데 목록이 뜨지 않아 난황을 겪었지만 value값들을 잘 적용시켜 해결하였다.
-- 
+- Map에 검색한 장소를 Firestore와 Redux 사용하여 CRUD를 진행 하였고, 카테고리 부분을 따로 컴포넌트로 만들었는데 목록이 뜨지 않아 난황을 겪었지만 value값을 잘 적용시켜 해결하였다.
+```
+const AddCafeModal = ({ modal, setModal }) => {
+  const { currentUser } = useAuth();
+  const initialState = {
+    user_id: currentUser.uid,
+    place_name: "",
+    address_name: "",
+    reason: "",
+  };
+  const [state, setState] = useState(initialState);
+  const { place_name, address_name, reason } = state;
+  const [message, setMessage] = useState({ error: false, msg: "" });
+  const dispatch = useDispatch();
 
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
 
+  const onCloseHandler = () => {
+    setModal({});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setMessage("");
+
+    if (place_name === "" || address_name === "" || reason === "") {
+      setMessage({ error: true, msg: "추가가 실패하였습니다." });
+      return;
+    } else {
+      setMessage({ error: false, msg: "카페가 추가되었습니다." });
+    }
+
+    dispatch(addCafeInitiate(state));
+    setState({ place_name: "", address_name: "", reason: "" });
+  };
+
+  useEffect(() => {
+    setState({ ...state, ...modal.content });
+  }, [setState]);
+
+  return (
+    <Modal onSubmit={handleSubmit}>
+      {message?.msg && (
+        <Message
+          variant={message?.error ? "danger" : "success"}
+          onClose={() => setMessage("")}
+        >
+          {message?.msg}
+        </Message>
+      )}
+      <Place value={modal.content}>
+        <PlaceName name="place_name">
+          <h2>{modal.content.place_name}</h2>
+        </PlaceName>
+        <AddressName name="address_name">
+          <h3>{modal.content.address_name}</h3>
+        </AddressName>
+      </Place>
+      <Category onChange={handleChange} name="reason" value={reason} />
+      <ModalBtnBox>
+        <AddBtn>추가</AddBtn>
+        <CancelBtn onClick={onCloseHandler}>취소</CancelBtn>
+      </ModalBtnBox>
+    </Modal>
+  );
+};
+
+```
+- Redux를 이용한 상태 관리는 익숙치 않아서 다른 Redux를 공부하기 위한 프로젝트를 병행하면서 진행하였다.
+- Dashboard를 구현중에 로그인한 유저의 id와 좋아요 및 카페를 추가한 유저의 id가 같을 경우에만 좋아요를 취소할 수 있고 카페를 삭제할 수 있도록 구현하였다.
+```
+ const [likes, setLikes] = useState([]);
+  const [hasLiked, setHasLiked] = useState(false);
+  const { currentUser } = useAuth();
+
+  const likeDocRef = collection(db, "posts", cafe.id, "likes");
+
+  useEffect(() => {
+    setHasLiked(likes.findIndex((like) => like.id === currentUser?.uid) !== -1);
+  }, [likes]);
+
+  useEffect(() => {
+    onSnapshot(likeDocRef, (snapshot) => {
+      setLikes(snapshot.docs);
+    });
+  }, [db, cafe.id]);
+
+  const likePost = async () => {
+    if (hasLiked) {
+      await deleteDoc(doc(db, "posts", cafe.id, "likes", currentUser.uid));
+    } else {
+      await setDoc(doc(db, "posts", cafe.id, "likes", currentUser.uid), {
+        username: currentUser.displayName,
+      });
+    }
+  };
+
+  return (
+    <LikeButton onClick={likePost}>
+      {hasLiked ? <FillHeart /> : <OutlineHeart />}
+      <div>{likes.length > 0 && <p> {likes.length} likes</p>}</div>
+    </LikeButton>
+  );
+};
+```
+  
+
+Styled-Components
+- 처음에는 css폴더를 만들고 진행하였으나, styled-components도 사용해보고 싶어서 리팩토링을 진행하였고, className에 사용하는 삼항연산자에 대한 부분은 계속 공부중에있고 리랙토링 할 예정이다.
+
+그 외
+- Firestore 필드에 카테고리를 나눠서 데이터를 저장하는 부분에서 어려웠지만 잘 이해하고 숙지하였다.
 
 ---
 ## 배포
