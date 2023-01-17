@@ -161,7 +161,7 @@ POST부분
 ![firestore2](https://user-images.githubusercontent.com/83106932/197471096-71d436b3-20e7-42c8-b495-8ec22f34f994.png)
 
 
-
+## 그 외 이슈는 Issue 카테고리에 있으며, 이슈 해결 후 이슈에 대한 설명은 Pr에 올려놓았습니다.
 ---
 ## 배포
 https://minecafe-web.netlify.app
