@@ -16,7 +16,7 @@
 - Firebase와 연동하여 Authentication기능 구현
 - Firestore에 데이터 저장 및 가져오기
 ---
-## 이슈
+## 이슈 및 
 ### Authentication (src/contexts/AuthContext.js)
 - Oauth 로그인 과정에서 propmt가 뜨지 않는 버그에 직면하였지만 setCustomParameters를 이용하여 해결하였고 비동기로 Firestore에 로그인 유저 정보를 저장하였다.
 - react hooks을 사용하여 user의 상태를 관리하였다.
