@@ -186,7 +186,8 @@ const LikeCafe = ({ cafe }) => {
 ![firestore2](https://user-images.githubusercontent.com/83106932/197471096-71d436b3-20e7-42c8-b495-8ec22f34f994.png)
 
 
-## 그 외 이슈는 Issue 카테고리에 있으며, 이슈 해결 후 이슈에 대한 설명은 Pr에 올려놓았습니다.
+#### ❗ 기능마다 branch를 따서 구현하였고 구현하면서 생긴 Issue는 Issue카테고리에 잘 정리했으며 Issue의 Solution은 PR에 올렸으니 참고해주세요.
+
 ---
 ## 배포
 https://minecafe-web.netlify.app
